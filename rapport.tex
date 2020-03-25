@@ -65,13 +65,28 @@
     ended only 1 time when the Nb\_iterations is equal to 5.
 
 \subsection{Convergence}
+\paragraph{}
+    The values computed in section 2.1 shows that the algorithm needs 5 iterations on average to converge to the
+    global minimum. After the algorithm computes the neighbors of this solution but as the previous solution is the
+    global minimum the neighbors won't be better. So the global minimum remains the same and the algorithm repeats this step
+    again and again until the maximum number of iterations sets before launching. That's why when the maximum is 5 the
+    algorithm can't always find the global minimum.
 
-\subsection{Number of solutions}
-
-\subsection{Number of neighbors with 2-opt}
+\subsection{Number of solutions and neighbors with 2-opt}
+\paragraph{}
+    For 10 cities the number of solutions is 9! and for 50 cities it is 49!.
+\paragraph{}
+    The number of neighbors with 2-opt follows the formula :
+    \[\binom{n}{1}\binom{n-3}{1}/2\]
+\paragraph{}
+    For 10 cities it give 35 and for 50 cities 1175 neighbors.
 
 \subsection{Algorithm performance}
-
+\paragraph{}
+    The number of solutions visited by the algorithm before the convergence is given by the formula
+    \textit{Nb\_iterations * Nb\_neighbors}. So with 10 cities if the algorithm find the solution at the 
+    iteration 4 it means that 40 solutions were visited. Compared to the 9! possible ones the algorithm tries only 1
+    out of 10000 solutions witch is pretty good.
 
 
 \section{Tests without Tabu duration on 50 cities}
