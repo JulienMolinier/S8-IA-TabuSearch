@@ -31,9 +31,38 @@
 
 
 
-    
+
 \section{Tests without Tabu duration on 10 cities}
 \subsection{Run of the algorithm}
+\paragraph{}
+    First of all we ran the algorithm 10 times for 5, 10 and 100 iterations. The algorithm stop when he found
+    the global minimum witch is supposed to be 3473km. The results are following in the table below :    
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run / Nb\_iterations}}& \multicolumn{1}{l|}{\textbf{5}} & \multicolumn{1}{l|}{\textbf{10}} & \multicolumn{1}{l|}{\textbf{100}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{5}  & \multicolumn{1}{l|}{4}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{7}  & \multicolumn{1}{l|}{4}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{5}  & \multicolumn{1}{l|}{4}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{4}  & \multicolumn{1}{l|}{6}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{6}  & \multicolumn{1}{l|}{4}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{3}  & \multicolumn{1}{l|}{5}  & \multicolumn{1}{l|}{7}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{7}  & \multicolumn{1}{l|}{4}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{7}  & \multicolumn{1}{l|}{4}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{5}  & \multicolumn{1}{l|}{7}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{3}  & \multicolumn{1}{l|}{5}  \\ \hline
+    \end{tabular}
+    \caption{Number of iteration needed without tabu duration on 10 cities}
+    \label{Performances scénario 0}
+  \end{table}
+
+\paragraph{}
+    From this table, the computation of the average gives 4.9 on 10 iterations et 4.9 on 100 iterations.
+    It means the algorithm need around 5 iterations to find the global minimum and it explains why the algorithm
+    ended only 1 time when the Nb\_iterations is equal to 5.
 
 \subsection{Convergence}
 
