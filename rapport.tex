@@ -87,17 +87,16 @@
     \textit{Nb\_iterations * Nb\_neighbors}. So with 10 cities if the algorithm find the solution at the 
     iteration 4 it means that 40 solutions were visited. Compared to the 9! possible ones the algorithm tries only 1
     out of 10000 solutions witch is pretty good.
-
+\newpage
 
 \section{Tests without Tabu duration on 50 cities}
-\paragraph{}
 \subsection{Run of the algorithm}
 \begin{table}[h]
     \centering
     \small
     \begin{tabular}{llll}
       \hline
-      \multicolumn{1}{|l|}{\textbf{Run / Nb\_iterations}}& \multicolumn{1}{l|}{\textbf{5}} & \multicolumn{1}{l|}{\textbf{10}} & \multicolumn{1}{l|}{\textbf{100}}\\ \hline
+      \multicolumn{1}{|l|}{\textbf{Run / Nb\_iterations}}& \multicolumn{1}{l|}{\textbf{10}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
       \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{44}  & \multicolumn{1}{l|}{50}  \\ \hline
       \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{44}  & \multicolumn{1}{l|}{47}  \\ \hline         
       \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48}  & \multicolumn{1}{l|}{43}  \\ \hline
@@ -112,9 +111,41 @@
     \caption{Number of iteration needed without tabu duration on 50 cities}
     \label{Performances scénario 0}
   \end{table}
+\paragraph{}
+    For 10 iterations, the algorithm never found the global minimum. On average, the global minimum is found at the 43.9th for 100 iterations. For 1000 iterations, the global minimum is found at the 45,3th iteration.
 
-Définition des défis et les solutions apportées ou envisagées
+\subsection{Convergence}
+\paragraph{}
+The algorithm needs around 43,9 iterations to converge for Nb\_iterations = 100 iterations, and 45,3 iterations to converge for Nb\_iterations = 1000 iterations. 
+\paragraph{}
+    Once the algorithm have found the global minimum, it doesn't explore other paths In the following iterations, the value of the kilometers is still blocked on the global minimum. According to the algorithm, the global minima is the best solution until yet, so there is no need to explore the neighbour around the top.  
+This is due to the Duration\_tabou which is equal to 0. This means that the number of solution that have been explored successively are not kept in memory. Thus, the same points are explored several times. Consequently,  the local minima is not going to change.
 
+\subsection{Solutions visited before the convergence}
+\paragraph{}
+    The algorithm starts to converge once it has found a local minima.
+So, in order to know the number of solutions visited before its convergence we need to count all the solutions that have been explored before the finding of the local minima. 
+In the first run, with Nb\_iterations = 100, 43 solutions have been explored before the finding of the local minima. So, for each of them, the best solution is displayed. It’s the result of the exploration of all the neighbor.
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run / Nb\_iterations}}& \multicolumn{1}{l|}{\textbf{10}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{57575}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{54060}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{55225}  & \multicolumn{1}{l|}{49350}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{55225}  & \multicolumn{1}{l|}{52875}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{45825}  & \multicolumn{1}{l|}{50525}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{50525}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{54060}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{49350}  & \multicolumn{1}{l|}{48175}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{49350}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{54060}  \\ \hline
+    \end{tabular}
+    \caption{Number of solutions visited before the convergence without tabu duration on 50 cities}
+    \label{Performances scénario 0}
+  \end{table}
 \section{Tests with Tabu duration}
 
 \section{Variation in Tabu duration}
