@@ -187,6 +187,7 @@ The algorithm was run 10 times for Nb\_iterations = 1000.
 \subsection{Improving the best solution}
 \paragraph{}
     A calculer
+
 \subsection{Local minima}
 \paragraph{}
     On average, 266 local minima are visited by the algorithm. 
@@ -209,10 +210,44 @@ With the Duration\_tabou equals to zero, only the local optimum of one area is e
 
 Nevertheless, 5701.7 km may not be the best solution of all the area. In this configuration, only 10 solutions are registered and belongs to the path. It’s possible that the solutions who do not belong the path have been explored more than once. We have to change the value of the Duration\_tabou increase, to see the effects of expanding the path.
 
- 
-
-
+\newpage
 \section{Variation in Tabu duration}
+\subsection{Explanation on the code}
+\paragraph{}
+    A completer
+
+\subsection{Run of the algorithm}
+The algorithm was run 5 times for Nb\_iterations = 1000.
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llllll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run / Duration\_tabou}}& \multicolumn{1}{l|}{\textbf{20}} & \multicolumn{1}{l|}{\textbf{50}} & \multicolumn{1}{l|}{\textbf{80}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{250}  & \multicolumn{1}{l|}{209}  & \multicolumn{1}{l|}{218}   & \multicolumn{1}{l|}{220}  & \multicolumn{1}{l|}{286} \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{239}  & \multicolumn{1}{l|}{213}  & \multicolumn{1}{l|}{198}  & \multicolumn{1}{l|}{208}  & \multicolumn{1}{l|}{270} \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{228}  & \multicolumn{1}{l|}{219}  & \multicolumn{1}{l|}{207}  & \multicolumn{1}{l|}{243}  & \multicolumn{1}{l|}{274} \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{253}  & \multicolumn{1}{l|}{200}  & \multicolumn{1}{l|}{209}   & \multicolumn{1}{l|}{235}  & \multicolumn{1}{l|}{281}\\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{231}  & \multicolumn{1}{l|}{229}  & \multicolumn{1}{l|}{216}   & \multicolumn{1}{l|}{223}  & \multicolumn{1}{l|}{273}\\ \hline
+    \end{tabular}
+    \caption{Number of local minima visited with various Duration\_tabou on 50 cities}
+    \label{Performances scénario 0}
+  \end{table}
+  \begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llllll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run / Duration\_tabou}}& \multicolumn{1}{l|}{\textbf{20}} & \multicolumn{1}{l|}{\textbf{50}} & \multicolumn{1}{l|}{\textbf{80}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5746}   & \multicolumn{1}{l|}{5698}  & \multicolumn{1}{l|}{5867} \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5775}  & \multicolumn{1}{l|}{5706}  & \multicolumn{1}{l|}{5780}  & \multicolumn{1}{l|}{5715} \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5799}  & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5711}  & \multicolumn{1}{l|}{5803} \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5809}  & \multicolumn{1}{l|}{5716}   & \multicolumn{1}{l|}{5692}  & \multicolumn{1}{l|}{5764}\\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5682}  & \multicolumn{1}{l|}{5661}   & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{5716}\\ \hline
+    \end{tabular}
+    \caption{Best solutions with various Duration\_tabou on 50 cities}
+    \label{Performances scénario 0}
+  \end{table}
 
 \section{Conclusion}
 \paragraph{}
