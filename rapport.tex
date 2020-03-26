@@ -187,6 +187,29 @@ The algorithm was run 10 times for Nb\_iterations = 1000.
 \subsection{Improving the best solution}
 \paragraph{}
     A calculer
+\subsection{Local minima}
+\paragraph{}
+    On average, 266 local minima are visited by the algorithm. 
+    Duration\_tabou is the number of solutions that have been explored successively. They are kept in memory like a path. So, the solutions belonging to the path could not be explored anymore. 
+The one can see that the path allows the algorithm to escape from the mountains. It goes to a local optimum, escapes and then goes to another one. After having visited all the local minima, the algorithm can find the major top, so the best solution.
+Consequently, the algorithm doesn’t converge because the solution moves from one local optima to another one. New local minima can be explored and the global minima can be updated. 
+Introducing the tabu duration allows to use properly the algorithm. 
+First, the Tabu search for the best neighbor up to the local optimum. 
+After being on the top, it explores around the top in order to find the best neighbor. So, the metric Duration\_tabou allows to search other neighbors by memorizing and excluding the previous paths.  This is why new local optima are found.
+After going down this area, the algorithm jump to another local optimum and explore new paths.
+Doing this way, the algorithm moves from one area to another one. At the end, the major top is the result of a complete exploration. 
+
+In the section B, with the following configuration ./algo\_tabou  1000 0 50 distances\_entre\_villes\_50.txt the best solution is on average  5891.7 km.
+
+In this section, with the following configuration ./algo\_tabou  1000 10 50 distances\_entre\_villes\_50.txt
+the best solution is on average 5701.7 km.
+
+So, introducing the Duration\_tabou allows the algorithm to gain in performance in terms of space because new mountains with new local minima are explored. At the end of the exploration, the less local minima can be considered as the major top, thus as the best solution.
+With the Duration\_tabou equals to zero, only the local optimum of one area is explored. If we’re lucky, the best solution is contained in this unique area. But in most cases, the major local minima is contained in another mountain. So what the algorithm considers as the best solution is probably the wrong one.
+
+Nevertheless, 5701.7 km may not be the best solution of all the area. In this configuration, only 10 solutions are registered and belongs to the path. It’s possible that the solutions who do not belong the path have been explored more than once. We have to change the value of the Duration\_tabou increase, to see the effects of expanding the path.
+
+ 
 
 
 \section{Variation in Tabu duration}
