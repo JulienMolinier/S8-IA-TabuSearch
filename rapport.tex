@@ -121,6 +121,7 @@ The algorithm needs around 43,9 iterations to converge for Nb\_iterations = 100 
     Once the algorithm have found the global minimum, it doesn't explore other paths In the following iterations, the value of the kilometers is still blocked on the global minimum. According to the algorithm, the global minima is the best solution until yet, so there is no need to explore the neighbour around the top.  
 This is due to the Duration\_tabou which is equal to 0. This means that the number of solution that have been explored successively are not kept in memory. Thus, the same points are explored several times. Consequently,  the local minima is not going to change.
 
+\newpage
 \subsection{Solutions visited before the convergence}
 \paragraph{}
     The algorithm starts to converge once it has found a local minima.
@@ -143,12 +144,13 @@ In the first run, with Nb\_iterations = 100, 43 solutions have been explored bef
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{49350}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{54060}  \\ \hline
     \end{tabular}
-    \caption{Number of solutions visited before the convergence without tabu duration on 50 cities}
+    \caption{Number of solutions visited before the convergence without Duration\_tabou on 50 cities}
     \label{Performances scénario 0}
   \end{table}
 \paragraph{}
   Average à calculer
-  On average, 42.7 solutions have been explored before finding the local minima for Nb\_iterations = 100, against 44.3 explored solutions for Nb\_iterations = 1000. The two runs show that the local minima is found between the 42.7th and the 44.3th iteration. 
+
+        On average, 42.7 solutions have been explored before finding the local minima for Nb\_iterations = 100, against 44.3 explored solutions for Nb\_iterations = 1000. The two runs show that the local minima is found between the 42.7th and the 44.3th iteration. 
 
     This is logical, since the Duration\_tabou is equal to 0 in the two runs. 
     Increasing the number of iterations is interesting if the value of the Duration\_tabou changes. In fact, it will allow the algorithm not to go through the same path and to have more time (thanks to the iterations) to explore.
