@@ -125,7 +125,7 @@ This is due to the Duration\_tabou which is equal to 0. This means that the numb
 \paragraph{}
     The algorithm starts to converge once it has found a local minima.
 So, in order to know the number of solutions visited before its convergence we need to count all the solutions that have been explored before the finding of the local minima. 
-In the first run, with Nb\_iterations = 100, 43 solutions have been explored before the finding of the local minima. So, for each of them, the best solution is displayed. It’s the result of the exploration of all the neighbor.
+In the first run, with Nb\_iterations = 100, 43 solutions have been explored before the finding of the local minima. So, for each of them, the best solution is displayed. It’s the result of the exploration of all the 1175 neighbors.
 \begin{table}[h]
     \centering
     \small
@@ -146,6 +146,20 @@ In the first run, with Nb\_iterations = 100, 43 solutions have been explored bef
     \caption{Number of solutions visited before the convergence without tabu duration on 50 cities}
     \label{Performances scénario 0}
   \end{table}
+\paragraph{}
+  Average à calculer
+  On average, 42.7 solutions have been explored before finding the local minima for Nb\_iterations = 100, against 44.3 explored solutions for Nb\_iterations = 1000. The two runs show that the local minima is found between the 42.7th and the 44.3th iteration. 
+
+This is logical, since the Duration\_tabou is equal to 0 in the two runs. 
+Increasing the number of iterations is interesting if the value of the Duration\_tabou changes. In fact, it will allow the algorithm not to go through the same path and to have more time (thanks to the iterations) to explore.
+If the value of the Duration\_tabou doesn’t change, once the algorithm have found the local minima, it will start to converge to it, no matters the number of iterations. 
+So here, the number of iterations does not influence the local minima.
+
+On 100 iterations, the local minima is found at the 43th iteration. In the 57 following iterations, the algorithm converge to this local minima. That’s to say that during 57 iterations there is not relevant information, as the local minima is not going to change. 
+On 1000 iterations, the local minima is found at the 44th iteration. So, there is a convergence during the following 956 iterations, meaning that during 956 iterations there is not relevant information. 
+
+Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
+
 \section{Tests with Tabu duration}
 
 \section{Variation in Tabu duration}
