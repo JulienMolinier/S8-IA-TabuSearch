@@ -150,17 +150,44 @@ In the first run, with Nb\_iterations = 100, 43 solutions have been explored bef
   Average à calculer
   On average, 42.7 solutions have been explored before finding the local minima for Nb\_iterations = 100, against 44.3 explored solutions for Nb\_iterations = 1000. The two runs show that the local minima is found between the 42.7th and the 44.3th iteration. 
 
-This is logical, since the Duration\_tabou is equal to 0 in the two runs. 
-Increasing the number of iterations is interesting if the value of the Duration\_tabou changes. In fact, it will allow the algorithm not to go through the same path and to have more time (thanks to the iterations) to explore.
-If the value of the Duration\_tabou doesn’t change, once the algorithm have found the local minima, it will start to converge to it, no matters the number of iterations. 
-So here, the number of iterations does not influence the local minima.
+    This is logical, since the Duration\_tabou is equal to 0 in the two runs. 
+    Increasing the number of iterations is interesting if the value of the Duration\_tabou changes. In fact, it will allow the algorithm not to go through the same path and to have more time (thanks to the iterations) to explore.
+    If the value of the Duration\_tabou doesn’t change, once the algorithm have found the local minima, it will start to converge to it, no matters the number of iterations. 
+    So here, the number of iterations does not influence the local minima.
 
-On 100 iterations, the local minima is found at the 43th iteration. In the 57 following iterations, the algorithm converge to this local minima. That’s to say that during 57 iterations there is not relevant information, as the local minima is not going to change. 
-On 1000 iterations, the local minima is found at the 44th iteration. So, there is a convergence during the following 956 iterations, meaning that during 956 iterations there is not relevant information. 
+    On 100 iterations, the local minima is found at the 43th iteration. In the 57 following iterations, the algorithm converge to this local minima. That’s to say that during 57 iterations there is not relevant information, as the local minima is not going to change. 
+    On 1000 iterations, the local minima is found at the 44th iteration. So, there is a convergence during the following 956 iterations, meaning that during 956 iterations there is not relevant information. 
 
-Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
+    Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
 
 \section{Tests with Tabu duration}
+\subsection{Run of the algorithm}
+The algorithm was run 10 times for Nb\_iterations = 1000.
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution in km}}& \multicolumn{1}{l|}{\textbf{Nb\_local minima visited}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{265}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{300} \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{294}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{226}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5771}  & \multicolumn{1}{l|}{271}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{271}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5798}  & \multicolumn{1}{l|}{242}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5770}  & \multicolumn{1}{l|}{276} \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{300} \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5720}  & \multicolumn{1}{l|}{216} \\ \hline
+    \end{tabular}
+    \caption{Number of local minima visited with tabu duration on 50 cities}
+    \label{Performances scénario 0}
+  \end{table}
+
+\subsection{Improving the best solution}
+\paragraph{}
+    A calculer
+
 
 \section{Variation in Tabu duration}
 
