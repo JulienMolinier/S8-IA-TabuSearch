@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{fancyhdr}
+\usepackage{makecell}
 
 \begin{document}
 
@@ -12,9 +13,9 @@
 \maketitle\thispagestyle{empty}
 
 \newpage    
-\renewcommand*\contentsname{Sommaire}
 \clearpage
 \thispagestyle{empty}
+\renewcommand*\contentsname{Sommaire}
 \tableofcontents
 \newpage
 
@@ -265,6 +266,7 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
       \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{228}  & \multicolumn{1}{l|}{219}  & \multicolumn{1}{l|}{207}  & \multicolumn{1}{l|}{243}  & \multicolumn{1}{l|}{274} \\ \hline
       \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{253}  & \multicolumn{1}{l|}{200}  & \multicolumn{1}{l|}{209}   & \multicolumn{1}{l|}{235}  & \multicolumn{1}{l|}{281}\\ \hline
       \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{231}  & \multicolumn{1}{l|}{229}  & \multicolumn{1}{l|}{216}   & \multicolumn{1}{l|}{223}  & \multicolumn{1}{l|}{273}\\ \hline
+      
     \end{tabular}
     \caption{Number of local minima visited with various Duration\_tabou on 50 cities}
   \end{table}
@@ -284,7 +286,24 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
   \end{table}
 
 \subsection{Improving the best solution}
-  A compléter
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llllll}\hline
+        \multicolumn{1}{|l|}{\textbf{Run / Duration\_tabou}}& \multicolumn{1}{l|}{\textbf{20}} & \multicolumn{1}{l|}{\textbf{50}} & \multicolumn{1}{l|}{\textbf{80}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
+        \multicolumn{1}{|l|}{\textbf{\thead{Solution improve (avg) /\\ Minima improve (avg)}}} & \multicolumn{1}{l|}{\thead{50.2 /\\ 2.8}} & \multicolumn{1}{l|}{\thead{51.4/\\3.8}} & \multicolumn{1}{l|}{\thead{51.2/\\3.4}} & \multicolumn{1}{l|}{\thead{52.2/\\4}} & \multicolumn{1}{l|}{\thead{48.8/\\1.8}}\\ \hline
+    \end{tabular}
+    \caption{Number of improvements of the solution (Average)}
+    \label{Improving 5.3}
+\end{table}
+The table shows the number of times a better solution than the previous
+one was found. It also shows the number of local minimum that were found
+ improving the solution. The results are more or less the same except when
+  Duration\_tabou is 1000 : the number of improvements is less than other results
+but the greatest change is in the finding of multiple better local minimum where
+ we have only an average of 1.8 local minima. It gives an Idea for the
+  part {\it{Infinite Value for the Tabu Duration.}}
+  
 \subsection{Local minima}
 \begin{table}[h]
     \centering
