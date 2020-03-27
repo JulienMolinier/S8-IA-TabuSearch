@@ -37,7 +37,7 @@
 \section{Tests without Tabu duration on 10 cities}
 \subsection{Run of the algorithm}
 \paragraph{}
-    First of all we ran the algorithm 10 times for 5, 10 and 100 iterations. The algorithm stop when he found
+    First of all we ran the algorithm 10 times for 5, 10 and 100 iterations. The algorithm stops when he found
     the global minimum witch is supposed to be 3473km. The results are following in the table below :    
 
 \begin{table}[h]
@@ -62,8 +62,8 @@
   \end{table}
 
 \paragraph{}
-    From this table, the computation of the average gives 4.9 on 10 iterations et 4.9 on 100 iterations.
-    It means the algorithm need around 5 iterations to find the global minimum and it explains why the algorithm
+    From this table, the computation of the average gives 4.9 on 10 iterations and 4.9 on 100 iterations.
+    It means the algorithm needs around 5 iterations to find the global minimum and it explains why the algorithm
     ended only 1 time when the Nb\_iterations is equal to 5.
 
 \subsection{Convergence}
@@ -81,12 +81,12 @@
     The number of neighbors with 2-opt follows the formula :
     \[\binom{n}{1}\binom{n-3}{1}/2\]
 \paragraph{}
-    For 10 cities it give 35 and for 50 cities 1175 neighbors.
+    For 10 cities it gives 35 and for 50 cities 1175 neighbors.
 
 \subsection{Algorithm performance}
 \paragraph{}
     The number of solutions visited by the algorithm before the convergence is given by the formula
-    \textit{Nb\_iterations * Nb\_neighbors}. So with 10 cities if the algorithm find the solution at the 
+    \textit{Nb\_iterations * Nb\_neighbors}. So with 10 cities if the algorithm finds the solution at the 
     iteration 4 it means that 40 solutions were visited. Compared to the 9! possible ones the algorithm tries only 1
     out of 10000 solutions witch is pretty good.
 \newpage
@@ -124,7 +124,7 @@
     Once the algorithm have found the global minimum, it doesn't explore other paths. In the following iterations, the value of the kilometers is still blocked on the global minimum. 
     According to the algorithm, the global minima is the best solution until yet, so there is no need to explore the neighborhood around the top.  
     This is due to the Duration\_tabou which is equal to 0. This means that the number of solution that have been explored successively are not kept in memory. 
-    Thus, the same points are explored several times. Consequently,  the local minima is not going to change.
+    Thus, the same points are explored several times. Consequently, the local minima is not going to change.
 
 \newpage
 \subsection{Solutions visited before the convergence}
@@ -298,16 +298,18 @@ A completer : convergence + conclusions
     \label{Performances scénario 0}
   \end{table}
 \paragraph{}
-In the section C, with the following configuration ./algo\_tabou  1000 10 50 distances\_entre\_villes\_50.txt the best solution is 5701.7 km. If we double the Duration\_tabou, the best solution is reduced by two :  2839.5 km.
-So, the solution is even more better with a big Duration\_tabou. 
+    In the section C, with the following configuration ./algo\_tabou  1000 10 50 distances\_entre\_villes\_50.txt the best solution is 5701.7 km. 
+    If we double the Duration\_tabou, the best solution is reduced by two :  2839.5 km.
+    So, the solution is even more better with a big Duration\_tabou. 
 
-We can observe that increasing the Duration\_tabou more than 20 has no good effects on the best solution because it becomes bigger and bigger. But it’s still less than Duration\_tabou= 10. 
+    We can observe that increasing the Duration\_tabou more than 20 has no good effects on the best solution because it becomes bigger and bigger. 
+    But it’s still less than Duration\_tabou= 10. 
 
-A completer
+    A completer
 
 \subsection{Infinite value for the Tabu duration}
 \paragraph{}
-A completer
+    A completer
 \section{Conclusion}
 \paragraph{}
 
