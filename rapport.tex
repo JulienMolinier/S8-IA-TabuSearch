@@ -134,30 +134,51 @@
     that have been explored before the finding of the local minima. 
     In the first run, with Nb\_iterations equal to 100, 43 solutions have been explored before the finding of the local minima. 
     So, for each of them, the best solution is displayed. It’s the result of the exploration of all the 1175 neighbors.
-\begin{table}[h]
-    \centering
-    \small
-    \begin{tabular}{llll}
-      \hline
-      \multicolumn{1}{|l|}{\textbf{Run / Nb\_iterations}}& \multicolumn{1}{l|}{\textbf{10}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
-      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{57575}  \\ \hline
-      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{54060}  \\ \hline         
-      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{55225}  & \multicolumn{1}{l|}{49350}  \\ \hline
-      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{55225}  & \multicolumn{1}{l|}{52875}  \\ \hline
-      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{45825}  & \multicolumn{1}{l|}{50525}  \\ \hline
-      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{50525}  \\ \hline
-      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{54060}  \\ \hline
-      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{49350}  & \multicolumn{1}{l|}{48175}  \\ \hline
-      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{49350}  \\ \hline
-      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{54060}  \\ \hline
-    \end{tabular}
-    \caption{Number of solutions visited before the convergence without Duration\_tabou on 50 cities}
-    \label{Performances scénario 0}
-  \end{table}
-\paragraph{}
-    Average à calculer
 
-    On average, 42.7 solutions have been explored before finding the local minima for Nb\_iterations equal to 100, against 44.3 explored solutions for Nb\_iterations equal to 1000.
+    \begin{table}[h]
+        \centering
+        \small
+        \begin{tabular}{llll}
+          \hline
+          \multicolumn{1}{|l|}{\textbf{Run / Nb\_iterations}}& \multicolumn{1}{l|}{\textbf{10}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
+          \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{43}  & \multicolumn{1}{l|}{49}  \\ \hline
+          \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{43}  & \multicolumn{1}{l|}{46}  \\ \hline         
+          \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{47}  & \multicolumn{1}{l|}{42}  \\ \hline
+          \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{47}  & \multicolumn{1}{l|}{45}  \\ \hline
+          \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{39}  & \multicolumn{1}{l|}{43}  \\ \hline
+          \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{41}  & \multicolumn{1}{l|}{43}  \\ \hline
+          \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{43}  & \multicolumn{1}{l|}{46}  \\ \hline
+          \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{42}  & \multicolumn{1}{l|}{41}  \\ \hline
+          \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{41}  & \multicolumn{1}{l|}{42}  \\ \hline
+          \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{41}  & \multicolumn{1}{l|}{46}  \\ \hline
+        \end{tabular}
+        \caption{Number of iterations before the finding of the best solution without Duration\_tabou on 50 cities}
+        \label{Performances scénario 0}
+      \end{table}
+
+      \begin{table}[h]
+        \centering
+        \small
+        \begin{tabular}{llll}
+          \hline
+          \multicolumn{1}{|l|}{\textbf{Run / Nb\_iterations}}& \multicolumn{1}{l|}{\textbf{10}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
+          \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{57575}  \\ \hline
+          \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{54060}  \\ \hline         
+          \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{55225}  & \multicolumn{1}{l|}{49350}  \\ \hline
+          \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{55225}  & \multicolumn{1}{l|}{52875}  \\ \hline
+          \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{45825}  & \multicolumn{1}{l|}{50525}  \\ \hline
+          \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{50525}  \\ \hline
+          \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{50525}  & \multicolumn{1}{l|}{54060}  \\ \hline
+          \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{49350}  & \multicolumn{1}{l|}{48175}  \\ \hline
+          \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{49350}  \\ \hline
+          \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{54060}  \\ \hline
+        \end{tabular}
+        \caption{Number of solutions visited before the convergence without Duration\_tabou on 50 cities}
+        \label{Performances scénario 0}
+      \end{table}
+
+\paragraph{}
+    On average, 50172.5 solutions have been explored before finding the local minima for Nb\_iterations equal to 100, against 52055.5 explored solutions for Nb\_iterations equal to 1000.
     The two runs show that the local minima is found between the 42.7th and the 44.3th iteration. 
 
     This is logical, since the Duration\_tabou is equal to 0 in the two runs. 
@@ -172,6 +193,7 @@
     956 iterations there is not relevant information. 
 
     Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
+    
 
 \section{Tests with Tabu duration}
 \subsection{Run of the algorithm}
