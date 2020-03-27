@@ -23,22 +23,19 @@
 \pagenumbering{arabic}
 \section{Introduction}
 \paragraph{}
-    Tabu Search is an algorithm created in 1986. It's an heuristic employing
-    local search methods. The goal is to take a potential solution of a problem
-    and check its immediate neighbors in the hope of finding an improved solution.
+    Tabu Search is an algorithm created in 1986. It uses a deterministic heuristic on
+    local search methods. The goal is to take a potential solution, that's to stay a local optimum,  
+    and to check its immediate neighbors in the hope of finding an improved solution.
     \footnote{https://en.wikipedia.org/wiki/Tabu\_search}
 \paragraph{}
-    The main objective of this report is to analyse an implementation of
-    the Tabu Search algorithm and see the effect when changing the paramaters values.
-
-
-
+    The objective of this report is to analyse an implementation of the Tabu Search algorithm through various configurations.
+    Then, it will be interesting to discuss on the effects of changing the paramaters values.
 
 \section{Tests without Tabu duration on 10 cities}
 \subsection{Run of the algorithm}
 \paragraph{}
     First of all we ran the algorithm 10 times for 5, 10 and 100 iterations. The algorithm stops when he found
-    the global minimum witch is supposed to be 3473km. The results are following in the table below :    
+    the global minimum which is supposed to be 3473km. The results are in the table below :    
 
 \begin{table}[h]
     \centering
@@ -58,12 +55,11 @@
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{3}  & \multicolumn{1}{l|}{5}  \\ \hline
     \end{tabular}
     \caption{Number of iteration needed without tabu duration on 10 cities}
-    \label{Performances scénario 0}
   \end{table}
 
 \paragraph{}
     From this table, the computation of the average gives 4.9 on 10 iterations and 4.9 on 100 iterations.
-    It means the algorithm needs around 5 iterations to find the global minimum and it explains why the algorithm
+    It means the algorithm needs around 5 iterations to find the global minimum. Thus, it explains why the algorithm
     ended only 1 time when the Nb\_iterations is equal to 5.
 
 \subsection{Convergence}
@@ -71,7 +67,7 @@
     The values computed in section 2.1 shows that the algorithm needs 5 iterations on average to converge to the
     global minimum. After the algorithm computes the neighbors of this solution but as the previous solution is the
     global minimum the neighbors won't be better. So the global minimum remains the same and the algorithm repeats this step
-    again and again until the maximum number of iterations sets before launching. That's why when the maximum is 5 the
+    again and again until the maximum number of iterations sets before launching. This is why when the maximum is 5 the
     algorithm can't always find the global minimum.
 
 \subsection{Number of solutions and neighbors with 2-opt}
@@ -88,7 +84,7 @@
     The number of solutions visited by the algorithm before the convergence is given by the formula
     \textit{Nb\_iterations * Nb\_neighbors}. So with 10 cities if the algorithm finds the solution at the 
     iteration 4 it means that 40 solutions were visited. Compared to the 9! possible ones the algorithm tries only 1
-    out of 10000 solutions witch is pretty good.
+    out of 10000 solutions; this is pretty good.
 \newpage
 
 \section{Tests without Tabu duration on 50 cities}
@@ -111,7 +107,6 @@
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{44}  & \multicolumn{1}{l|}{47}  \\ \hline
     \end{tabular}
     \caption{Number of iteration needed without tabu duration on 50 cities}
-    \label{Performances scénario 0}
   \end{table}
 \paragraph{}
     For 10 iterations, the algorithm never found the global minimum. On average, the global minimum is found at the 43.9th
@@ -119,9 +114,9 @@
 
 \subsection{Convergence}
 \paragraph{}
-    The algorithm needs around 43.9 iterations to converge for Nb\_iterations equal to 100 iterations, and 45.3 iterations to converge for Nb\_iterations equal to 1000 iterations. 
+    The algorithm converges during 43.9 iterations for Nb\_iterations equals to 100 iterations, and during 45.3 iterations for Nb\_iterations equals to 1000 iterations. 
 \paragraph{}
-    Once the algorithm have found the global minimum, it doesn't explore other paths. In the following iterations, the value of the kilometers is still blocked on the global minimum. 
+    Once the algorithm has found the global minimum, it doesn't explore other paths. In the following iterations, the value of the kilometers is still blocked on the global minimum. 
     According to the algorithm, the global minima is the best solution until yet, so there is no need to explore the neighborhood around the top.  
     This is due to the Duration\_tabou which is equal to 0. This means that the number of solution that have been explored successively are not kept in memory. 
     Thus, the same points are explored several times. Consequently, the local minima is not going to change.
@@ -132,8 +127,8 @@
     The algorithm starts to converge once it has found a local minima.
     So, in order to know the number of solutions visited before its convergence we need to count all the solutions 
     that have been explored before the finding of the local minima. 
-    In the first run, with Nb\_iterations equal to 100, 43 solutions have been explored before the finding of the local minima. 
-    So, for each of them, the best solution is displayed. It’s the result of the exploration of all the 1175 neighbors.
+    In the first run, with Nb\_iterations equal to 100, \textit{Iteration\_of\_best\_soultion*1175} solutions have been explored before the finding of the local minima. 
+    So, for each of the iterations, the best solution is displayed. It’s the result of the exploration of all the 1175 neighbors.
 
     \begin{table}[h]
         \centering
@@ -153,7 +148,6 @@
           \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{41}  & \multicolumn{1}{l|}{46}  \\ \hline
         \end{tabular}
         \caption{Number of iterations before the finding of the best solution without Duration\_tabou on 50 cities}
-        \label{Performances scénario 0}
       \end{table}
 
       \begin{table}[h]
@@ -174,7 +168,6 @@
           \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{48175}  & \multicolumn{1}{l|}{54060}  \\ \hline
         \end{tabular}
         \caption{Number of solutions visited before the convergence without Duration\_tabou on 50 cities}
-        \label{Performances scénario 0}
       \end{table}
 
 \paragraph{}
@@ -194,7 +187,7 @@
 
     Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
     
-
+\newpage
 \section{Tests with Tabu duration}
 \subsection{Run of the algorithm}
 The algorithm was run 10 times for Nb\_iterations equal to 1000.
@@ -216,7 +209,6 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5720}  & \multicolumn{1}{l|}{216} & \multicolumn{1}{l|}{59}  \\ \hline
     \end{tabular}
     \caption{Number of local minima visited with tabu duration on 50 cities}
-    \label{Performances scénario 0}
   \end{table}
 
 \subsection{Improving the best solution}
@@ -251,7 +243,6 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
     Nevertheless, 5701.7 km may not be the best solution of all the area. In this configuration, only 10 solutions are registered and belong to the path. It’s possible that
     the solutions who do not belong the path have been explored more than once. We have to change the value of the Duration\_tabou increase, to see the effects of 
     expanding the path.
-
 \newpage
 \section{Variation in Tabu duration}
 \subsection{Explanation on the code}
@@ -274,7 +265,6 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
       
     \end{tabular}
     \caption{Number of local minima visited with various Duration\_tabou on 50 cities}
-    \label{Performances scénario 0}
   \end{table}
   \begin{table}[h]
     \centering
@@ -289,7 +279,6 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
       \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5682}  & \multicolumn{1}{l|}{5661}   & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{5716}\\ \hline
     \end{tabular}
     \caption{Best solutions with various Duration\_tabou on 50 cities}
-    \label{Performances scénario 0}
   \end{table}
 
 \subsection{Improving the best solution}
@@ -321,12 +310,10 @@ but the greatest change is in the finding of multiple better local minimum where
       \multicolumn{1}{|l|}{local minima } & \multicolumn{1}{l|}{120.1}  & \multicolumn{1}{l|}{107}  & \multicolumn{1}{l|}{104.8}   & \multicolumn{1}{l|}{112.7}  & \multicolumn{1}{l|}{138.4} \\ \hline
     \end{tabular}
     \caption{Average of local minima visited with various Duration\_tabou on 50 cities}
-    \label{Performances scénario 0}
   \end{table}
 \paragraph{}
 A completer : convergence + conclusions
 
-\newpage
 \subsection{Parameters settings recommanded}
 \begin{table}[h]
     \centering
@@ -334,10 +321,9 @@ A completer : convergence + conclusions
     \begin{tabular}{llllll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Duration\_tabou}}& \multicolumn{1}{l|}{\textbf{20}} & \multicolumn{1}{l|}{\textbf{50}} & \multicolumn{1}{l|}{\textbf{80}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
-      \multicolumn{1}{|l|}{best solution in km } & \multicolumn{1}{l|}{2839.5}  & \multicolumn{1}{l|}{2856.4}  & \multicolumn{1}{l|}{2847.8}   & \multicolumn{1}{l|}{2857.2}  & \multicolumn{1}{l|}{2856.5} \\ \hline
+      \multicolumn{1}{|l|}{best solution in km } & \multicolumn{1}{l|}{5679}  & \multicolumn{1}{l|}{5712.8}  & \multicolumn{1}{l|}{5695.6}   & \multicolumn{1}{l|}{5714.4}  & \multicolumn{1}{l|}{5773} \\ \hline
     \end{tabular}
     \caption{Average of best solutions obtained with various Duration\_tabou on 50 cities}
-    \label{Performances scénario 0}
   \end{table}
 \paragraph{}
     In the section C, with the following configuration ./algo\_tabou  1000 10 50 distances\_entre\_villes\_50.txt the best solution is 5701.7 km. 
@@ -348,10 +334,10 @@ A completer : convergence + conclusions
     But it’s still less than Duration\_tabou= 10. 
 
     A completer
-
 \subsection{Infinite value for the Tabu duration}
 \paragraph{}
-    A completer
+  The Tabu Duration prohibits to reuse the move for a number of iterations. This is why the number must be set according to the number of variables 
+  and possible values for the variables. In fact if this number is to big all moves will be prohibited and the algorithm blocked.
 \section{Conclusion}
 \paragraph{}
 
