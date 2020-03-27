@@ -6,6 +6,8 @@
 
 
 \pagestyle{fancy}
+\rhead{\leftmark}
+\lhead{}
 \cfoot{\thepage}
 \renewcommand*\contentsname{Sommaire}
 
@@ -74,7 +76,7 @@
 
 \subsection{Number of solutions and neighbors with 2-opt}
 \paragraph{}
-    For 10 cities the number of solutions is 9! and for 50 cities it is 49!.
+    For 10 cities the number of solutions is \textit{9!/2} and for 50 cities it is \textit{49!/2}.
 \paragraph{}
     The number of neighbors with 2-opt follows the formula :
     \[\binom{n}{1}\binom{n-3}{1}/2\]
@@ -112,21 +114,26 @@
     \label{Performances scénario 0}
   \end{table}
 \paragraph{}
-    For 10 iterations, the algorithm never found the global minimum. On average, the global minimum is found at the 43.9th for 100 iterations. For 1000 iterations, the global minimum is found at the 45,3th iteration.
+    For 10 iterations, the algorithm never found the global minimum. On average, the global minimum is found at the 43.9th
+    for 100 iterations. For 1000 iterations, the global minimum is found at the 45.3th iteration.
 
 \subsection{Convergence}
 \paragraph{}
-The algorithm needs around 43,9 iterations to converge for Nb\_iterations = 100 iterations, and 45,3 iterations to converge for Nb\_iterations = 1000 iterations. 
+    The algorithm needs around 43.9 iterations to converge for Nb\_iterations equal to 100 iterations, and 45.3 iterations to converge for Nb\_iterations equal to 1000 iterations. 
 \paragraph{}
-    Once the algorithm have found the global minimum, it doesn't explore other paths In the following iterations, the value of the kilometers is still blocked on the global minimum. According to the algorithm, the global minima is the best solution until yet, so there is no need to explore the neighbour around the top.  
-This is due to the Duration\_tabou which is equal to 0. This means that the number of solution that have been explored successively are not kept in memory. Thus, the same points are explored several times. Consequently,  the local minima is not going to change.
+    Once the algorithm have found the global minimum, it doesn't explore other paths. In the following iterations, the value of the kilometers is still blocked on the global minimum. 
+    According to the algorithm, the global minima is the best solution until yet, so there is no need to explore the neighborhood around the top.  
+    This is due to the Duration\_tabou which is equal to 0. This means that the number of solution that have been explored successively are not kept in memory. 
+    Thus, the same points are explored several times. Consequently,  the local minima is not going to change.
 
 \newpage
 \subsection{Solutions visited before the convergence}
 \paragraph{}
     The algorithm starts to converge once it has found a local minima.
-So, in order to know the number of solutions visited before its convergence we need to count all the solutions that have been explored before the finding of the local minima. 
-In the first run, with Nb\_iterations = 100, 43 solutions have been explored before the finding of the local minima. So, for each of them, the best solution is displayed. It’s the result of the exploration of all the 1175 neighbors.
+    So, in order to know the number of solutions visited before its convergence we need to count all the solutions 
+    that have been explored before the finding of the local minima. 
+    In the first run, with Nb\_iterations equal to 100, 43 solutions have been explored before the finding of the local minima. 
+    So, for each of them, the best solution is displayed. It’s the result of the exploration of all the 1175 neighbors.
 \begin{table}[h]
     \centering
     \small
@@ -148,23 +155,27 @@ In the first run, with Nb\_iterations = 100, 43 solutions have been explored bef
     \label{Performances scénario 0}
   \end{table}
 \paragraph{}
-  Average à calculer
+    Average à calculer
 
-        On average, 42.7 solutions have been explored before finding the local minima for Nb\_iterations = 100, against 44.3 explored solutions for Nb\_iterations = 1000. The two runs show that the local minima is found between the 42.7th and the 44.3th iteration. 
+    On average, 42.7 solutions have been explored before finding the local minima for Nb\_iterations equal to 100, against 44.3 explored solutions for Nb\_iterations equal to 1000.
+    The two runs show that the local minima is found between the 42.7th and the 44.3th iteration. 
 
     This is logical, since the Duration\_tabou is equal to 0 in the two runs. 
-    Increasing the number of iterations is interesting if the value of the Duration\_tabou changes. In fact, it will allow the algorithm not to go through the same path and to have more time (thanks to the iterations) to explore.
+    Increasing the number of iterations is interesting if the value of the Duration\_tabou changes. In fact, it will allow the algorithm not to go through the same path 
+    and to have more time (thanks to the iterations) to explore.
     If the value of the Duration\_tabou doesn’t change, once the algorithm have found the local minima, it will start to converge to it, no matters the number of iterations. 
     So here, the number of iterations does not influence the local minima.
 
-    On 100 iterations, the local minima is found at the 43th iteration. In the 57 following iterations, the algorithm converge to this local minima. That’s to say that during 57 iterations there is not relevant information, as the local minima is not going to change. 
-    On 1000 iterations, the local minima is found at the 44th iteration. So, there is a convergence during the following 956 iterations, meaning that during 956 iterations there is not relevant information. 
+    On 100 iterations, the local minima is found at the 43th iteration. In the 57 following iterations, the algorithm converge to this local minima. That’s to say that 
+    during 57 iterations there is not relevant information, as the local minima is not going to change. 
+    On 1000 iterations, the local minima is found at the 44th iteration. So, there is a convergence during the following 956 iterations, meaning that during 
+    956 iterations there is not relevant information. 
 
     Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
 
 \section{Tests with Tabu duration}
 \subsection{Run of the algorithm}
-The algorithm was run 10 times for Nb\_iterations = 1000.
+The algorithm was run 10 times for Nb\_iterations equal to 1000.
 \begin{table}[h]
     \centering
     \small
@@ -193,24 +204,29 @@ The algorithm was run 10 times for Nb\_iterations = 1000.
 \subsection{Local minima}
 \paragraph{}
     On average, 266 local minima are visited by the algorithm. 
-    Duration\_tabou is the number of solutions that have been explored successively. They are kept in memory like a path. So, the solutions belonging to the path could not be explored anymore. 
-The one can see that the path allows the algorithm to escape from the mountains. It goes to a local optimum, escapes and then goes to another one. After having visited all the local minima, the algorithm can find the major top, so the best solution.
-Consequently, the algorithm doesn’t converge because the solution moves from one local optima to another one. New local minima can be explored and the global minima can be updated. 
-Introducing the tabu duration allows to use properly the algorithm. 
-First, the Tabu search for the best neighbor up to the local optimum. 
-After being on the top, it explores around the top in order to find the best neighbor. So, the metric Duration\_tabou allows to search other neighbors by memorizing and excluding the previous paths.  This is why new local optima are found.
-After going down this area, the algorithm jump to another local optimum and explore new paths.
-Doing this way, the algorithm moves from one area to another one. At the end, the major top is the result of a complete exploration. 
+    Duration\_tabou is the number of solutions that have been explored successively. They are kept in memory like a path. So, the solutions belonging to the path could
+    not be explored anymore. The one can see that the path allows the algorithm to escape from the mountains. It goes to a local optimum, escapes and then goes to another one. 
+    After having visited all the local minima, the algorithm can find the major top, so the best solution. Consequently, the algorithm doesn’t converge because the solution 
+    moves from one local optima to another one. New local minima can be explored and the global minima can be updated. Introducing the tabu duration allows to use properly
+    the algorithm. First, the Tabu search for the best neighbor up to the local optimum. 
+    After being on the top, it explores around the top in order to find the best neighbor. So, the metric Duration\_tabou allows to search other neighbors by memorizing and 
+    excluding the previous paths.  This is why new local optima are found.
+    After going down this area, the algorithm jump to another local optimum and explore new paths.
+    Doing this way, the algorithm moves from one area to another one. At the end, the major top is the result of a complete exploration. 
 
-In the section B, with the following configuration ./algo\_tabou  1000 0 50 distances\_entre\_villes\_50.txt the best solution is on average  5891.7 km.
+    In the section B, with the following configuration ./algo\_tabou  1000 0 50 distances\_entre\_villes\_50.txt the best solution is on average  5891.7 km.
 
-In this section, with the following configuration ./algo\_tabou  1000 10 50 distances\_entre\_villes\_50.txt
-the best solution is on average 5701.7 km.
+    In this section, with the following configuration ./algo\_tabou  1000 10 50 distances\_entre\_villes\_50.txt
+    the best solution is on average 5701.7 km.
 
-So, introducing the Duration\_tabou allows the algorithm to gain in performance in terms of space because new mountains with new local minima are explored. At the end of the exploration, the less local minima can be considered as the major top, thus as the best solution.
-With the Duration\_tabou equals to zero, only the local optimum of one area is explored. If we’re lucky, the best solution is contained in this unique area. But in most cases, the major local minima is contained in another mountain. So what the algorithm considers as the best solution is probably the wrong one.
+    So, introducing the Duration\_tabou allows the algorithm to gain in performance in terms of space because new mountains with new local minima are explored. At the end 
+    of the exploration, the less local minima can be considered as the major top, thus as the best solution.
+    With the Duration\_tabou equals to zero, only the local optimum of one area is explored. If we’re lucky, the best solution is contained in this unique area. But in most cases,
+    the major local minima is contained in another mountain. So what the algorithm considers as the best solution is probably the wrong one.
 
-Nevertheless, 5701.7 km may not be the best solution of all the area. In this configuration, only 10 solutions are registered and belong to the path. It’s possible that the solutions who do not belong the path have been explored more than once. We have to change the value of the Duration\_tabou increase, to see the effects of expanding the path.
+    Nevertheless, 5701.7 km may not be the best solution of all the area. In this configuration, only 10 solutions are registered and belong to the path. It’s possible that
+    the solutions who do not belong the path have been explored more than once. We have to change the value of the Duration\_tabou increase, to see the effects of 
+    expanding the path.
 
 \newpage
 \section{Variation in Tabu duration}
@@ -219,7 +235,7 @@ Nevertheless, 5701.7 km may not be the best solution of all the area. In this co
     A completer
 
 \subsection{Run of the algorithm}
-The algorithm was run 5 times for Nb\_iterations = 1000.
+  The algorithm was run 5 times for Nb\_iterations equal to 1000.
 \begin{table}[h]
     \centering
     \small
