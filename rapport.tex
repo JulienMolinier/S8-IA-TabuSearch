@@ -24,8 +24,8 @@
 \section{Introduction}
 \paragraph{}
     Tabu Search is an algorithm created in 1986. It uses a deterministic heuristic on
-    local search methods. The goal is to take a potential solution, that's to stay a local optimum, to go away from it 
-    and check its immediate neighbors in the hope of finding an improved solution.
+    local search methods. The goal is to take a potential solution, that's to stay a local optimum,  
+    and to check its immediate neighbors in the hope of finding an improved solution.
     \footnote{https://en.wikipedia.org/wiki/Tabu\_search}
 \paragraph{}
     The objective of this report is to analyse an implementation of the Tabu Search algorithm through various configurations.
@@ -84,7 +84,7 @@
     The number of solutions visited by the algorithm before the convergence is given by the formula
     \textit{Nb\_iterations * Nb\_neighbors}. So with 10 cities if the algorithm finds the solution at the 
     iteration 4 it means that 40 solutions were visited. Compared to the 9! possible ones the algorithm tries only 1
-    out of 10000 solutions which is pretty good.
+    out of 10000 solutions; this is pretty good.
 \newpage
 
 \section{Tests without Tabu duration on 50 cities}
