@@ -23,22 +23,19 @@
 \pagenumbering{arabic}
 \section{Introduction}
 \paragraph{}
-    Tabu Search is an algorithm created in 1986. It's an heuristic employing
-    local search methods. The goal is to take a potential solution of a problem
+    Tabu Search is an algorithm created in 1986. It uses a deterministic heuristic on
+    local search methods. The goal is to take a potential solution, that's to stay a local optimum, to go away from it 
     and check its immediate neighbors in the hope of finding an improved solution.
     \footnote{https://en.wikipedia.org/wiki/Tabu\_search}
 \paragraph{}
-    The main objective of this report is to analyse an implementation of
-    the Tabu Search algorithm and see the effect when changing the paramaters values.
-
-
-
+    The objective of this report is to analyse an implementation of the Tabu Search algorithm through various configurations.
+    Then, it will be interesting to discuss on the effects of changing the paramaters values.
 
 \section{Tests without Tabu duration on 10 cities}
 \subsection{Run of the algorithm}
 \paragraph{}
     First of all we ran the algorithm 10 times for 5, 10 and 100 iterations. The algorithm stops when he found
-    the global minimum witch is supposed to be 3473km. The results are following in the table below :    
+    the global minimum which is supposed to be 3473km. The results are in the table below :    
 
 \begin{table}[h]
     \centering
@@ -62,7 +59,7 @@
 
 \paragraph{}
     From this table, the computation of the average gives 4.9 on 10 iterations and 4.9 on 100 iterations.
-    It means the algorithm needs around 5 iterations to find the global minimum and it explains why the algorithm
+    It means the algorithm needs around 5 iterations to find the global minimum. Thus, it explains why the algorithm
     ended only 1 time when the Nb\_iterations is equal to 5.
 
 \subsection{Convergence}
@@ -70,7 +67,7 @@
     The values computed in section 2.1 shows that the algorithm needs 5 iterations on average to converge to the
     global minimum. After the algorithm computes the neighbors of this solution but as the previous solution is the
     global minimum the neighbors won't be better. So the global minimum remains the same and the algorithm repeats this step
-    again and again until the maximum number of iterations sets before launching. That's why when the maximum is 5 the
+    again and again until the maximum number of iterations sets before launching. This is why when the maximum is 5 the
     algorithm can't always find the global minimum.
 
 \subsection{Number of solutions and neighbors with 2-opt}
@@ -87,7 +84,7 @@
     The number of solutions visited by the algorithm before the convergence is given by the formula
     \textit{Nb\_iterations * Nb\_neighbors}. So with 10 cities if the algorithm finds the solution at the 
     iteration 4 it means that 40 solutions were visited. Compared to the 9! possible ones the algorithm tries only 1
-    out of 10000 solutions witch is pretty good.
+    out of 10000 solutions which is pretty good.
 \newpage
 
 \section{Tests without Tabu duration on 50 cities}
