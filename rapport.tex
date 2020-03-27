@@ -183,17 +183,17 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
     \small
     \begin{tabular}{llll}
       \hline
-      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution in km}}& \multicolumn{1}{l|}{\textbf{Nb\_local minima visited}}\\ \hline
-      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{265}  \\ \hline
-      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{300} \\ \hline         
-      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{294}  \\ \hline
-      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{226}  \\ \hline
-      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5771}  & \multicolumn{1}{l|}{271}  \\ \hline
-      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{271}  \\ \hline
-      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5798}  & \multicolumn{1}{l|}{242}  \\ \hline
-      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5770}  & \multicolumn{1}{l|}{276} \\ \hline
-      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{300} \\ \hline
-      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5720}  & \multicolumn{1}{l|}{216} \\ \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution in km}}& \multicolumn{1}{l|}{\textbf{Nb\_local minima visited}}& \multicolumn{1}{l|}{\textbf{Nb\_BetterSolution}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{265} & \multicolumn{1}{l|}{43}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5691}  & \multicolumn{1}{l|}{300} & \multicolumn{1}{l|}{54}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{294}  & \multicolumn{1}{l|}{47}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{226}  & \multicolumn{1}{l|}{49}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5771}  & \multicolumn{1}{l|}{271}  & \multicolumn{1}{l|}{48}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{271}  & \multicolumn{1}{l|}{47}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5798}  & \multicolumn{1}{l|}{242}  & \multicolumn{1}{l|}{49}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5770}  & \multicolumn{1}{l|}{276} & \multicolumn{1}{l|}{62}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{300} & \multicolumn{1}{l|}{48}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5720}  & \multicolumn{1}{l|}{216} & \multicolumn{1}{l|}{59}  \\ \hline
     \end{tabular}
     \caption{Number of local minima visited with tabu duration on 50 cities}
     \label{Performances scénario 0}
@@ -201,7 +201,9 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
 
 \subsection{Improving the best solution}
 \paragraph{}
-    A calculer
+    On average, the best solution is improved 50.6 times in a run. It is mostly due to the first
+    descent to the first found local minima but if we count the number of local minimum that improve
+    the previous local minima, we have an average of 3 improvements in a run.
 
 \subsection{Local minima}
 \paragraph{}
