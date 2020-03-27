@@ -251,7 +251,24 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
 \section{Variation in Tabu duration}
 \subsection{Explanation on the code}
 \paragraph{}
-    A completer
+    The Tabu list is coded so that it can be able to store for a couple of two cities if an switch move for all cities between them is Tabu or not. Here's an example of this move bewteen the cities A and B :
+    \newline
+
+
+\includegraphics[width=0.8\textwidth]{move.png}\\
+\paragraph{}
+    Such a move is considered as "tabu" if it has already been done before.
+    However, the code will not remember a move after a specific number of iterations : this is the tabu duration. Added to the current iteration number, its value is stored inside the tabu list for a couple of two cities.
+    By comparing the stored value to the current iteration, the algorithm can determine if the move is tabu or not ('-1' is stored for each couple before exploring any solution, so the first move cannot be tabu).
+    There's also another list in the code which stores all tabu solutions, instead of the moves. This list could have been used too.
+\paragraph{}
+    The algorithm explores all possible moves (between each cities) for a given solution : this is the neighborhood. The best solution which resulted from a switch move which is not tabu is now defined as the current one.
+\paragraph{}
+    The interesting thing is that the tabu list avoid the algorithm to be stuck in a local minimum. Because it chooses the best solution amongs the non visited neighboors, it can go for a solution which isn't necesserly improving the result.
+    If the tabu duration is long enough, it can easily get out of local minimum. However, choosing a too important value is not a good idea, because it can be completely surrounded by already visited solutions, or surround the best solution and be stuck again.
+    So technically, it is possible to chose a tabu duration as long as the number of iterations, but of course it is not a good practice to do so.
+
+
 
 \subsection{Run of the algorithm}
   The algorithm was run 5 times for Nb\_iterations equal to 1000.
@@ -328,8 +345,7 @@ Tabu Duration and for 1000 as Tabu Duration, we visit more local minima.
     \begin{tabular}{llllll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Duration\_tabou}}& \multicolumn{1}{l|}{\textbf{20}} & \multicolumn{1}{l|}{\textbf{50}} & \multicolumn{1}{l|}{\textbf{80}} & \multicolumn{1}{l|}{\textbf{100}} & \multicolumn{1}{l|}{\textbf{1000}}\\ \hline
-      \multicolumn{1}{|l|}{best solution in km } & \multicolumn{1}{l|}{2839.5}  & \multicolumn{1}{l|}{2856.4}  & \multicolumn{1}{l|}{2847.8}   & \multicolumn{1}{l|}{2857.2}  & \multicolumn{1}{l|}{2856.5} \\ \hline
-    \end{tabular}
+    \multicolumn{1}{|l|}{best solution in km } & \multicolumn{1}{l|}{5679}  & \multicolumn{1}{l|}{5712.8}  & \multicolumn{1}{l|}{5695.6}   & \multicolumn{1}{l|}{5714.4}  & \multicolumn{1}{l|}{5773} \\ \hline    \end{tabular}
     \caption{Average of best solutions obtained with various Duration\_tabou on 50 cities}
   \end{table}
 \paragraph{}
