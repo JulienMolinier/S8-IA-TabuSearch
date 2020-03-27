@@ -114,9 +114,9 @@
 
 \subsection{Convergence}
 \paragraph{}
-    The algorithm needs around 43.9 iterations to converge for Nb\_iterations equal to 100 iterations, and 45.3 iterations to converge for Nb\_iterations equal to 1000 iterations. 
+    The algorithm converges during 43.9 iterations for Nb\_iterations equals to 100 iterations, and during 45.3 iterations for Nb\_iterations equals to 1000 iterations. 
 \paragraph{}
-    Once the algorithm have found the global minimum, it doesn't explore other paths. In the following iterations, the value of the kilometers is still blocked on the global minimum. 
+    Once the algorithm has found the global minimum, it doesn't explore other paths. In the following iterations, the value of the kilometers is still blocked on the global minimum. 
     According to the algorithm, the global minima is the best solution until yet, so there is no need to explore the neighborhood around the top.  
     This is due to the Duration\_tabou which is equal to 0. This means that the number of solution that have been explored successively are not kept in memory. 
     Thus, the same points are explored several times. Consequently, the local minima is not going to change.
@@ -187,7 +187,7 @@
 
     Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
     
-
+\newpage
 \section{Tests with Tabu duration}
 \subsection{Run of the algorithm}
 The algorithm was run 10 times for Nb\_iterations equal to 1000.
@@ -243,7 +243,6 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
     Nevertheless, 5701.7 km may not be the best solution of all the area. In this configuration, only 10 solutions are registered and belong to the path. It’s possible that
     the solutions who do not belong the path have been explored more than once. We have to change the value of the Duration\_tabou increase, to see the effects of 
     expanding the path.
-
 \newpage
 \section{Variation in Tabu duration}
 \subsection{Explanation on the code}
@@ -297,7 +296,6 @@ The algorithm was run 10 times for Nb\_iterations equal to 1000.
 \paragraph{}
 A completer : convergence + conclusions
 
-\newpage
 \subsection{Parameters settings recommanded}
 \begin{table}[h]
     \centering
