@@ -184,13 +184,13 @@
     This is logical, since the Duration\_tabou is equal to 0 in the two runs. 
     Increasing the number of iterations is interesting if the value of the Duration\_tabou changes. In fact, it will allow the algorithm not to go through the same path 
     and to have more time (thanks to the iterations) to explore.
-    If the value of the Duration\_tabou doesn’t change, once the algorithm have found the local minima, it will start to converge to it, no matters the number of iterations. 
+    If the value of the Duration\_tabou doesn’t change, once the algorithm have found the local minima, it will stop to converge to it, no matters the number of iterations. 
     So here, the number of iterations does not influence the local minima.
 
-    On 100 iterations, the local minima is found at the 43th iteration. In the 57 following iterations, the algorithm converge to this local minima. That’s to say that 
+    On 100 iterations, the local minima is found at the 43th iteration. It results of a convergence. In the 57 following iterations, the algorithm is blocked to this local minima. That’s to say that 
     during 57 iterations there is not relevant information, as the local minima is not going to change. 
-    On 1000 iterations, the local minima is found at the 44th iteration. So, there is a convergence during the following 956 iterations, meaning that during 
-    956 iterations there is not relevant information. 
+    On 1000 iterations, the algorithm converges to the local minima. It's found at the 44th iteration. So, the algorithm is blocked in the following 956 iterations, meaning that during 
+    956 iterations there is not relevant information. The neighbors are not visited since there are less interesting than the local minima.
 
     Since the time loss is less important on 100 iterations than on 1000 iterations, the one can say that running the algorithm on 100 iterations allows to gain performance.
     
