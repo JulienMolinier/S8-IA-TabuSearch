@@ -1,0 +1,35 @@
+\documentclass[12pt,oneside,a4paper]{article}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{makecell}
+
+\begin{document}
+
+\title{Second report on the Tabu Search Algorithm}
+\author{Fanny Kalinowski, Julien Molinier, Robin Lambert, Maxime Leras}
+\date{18 Avril 2020}
+\maketitle\thispagestyle{empty}
+
+\newpage    
+\clearpage
+\thispagestyle{empty}
+\renewcommand*\contentsname{Sommaire}
+\tableofcontents
+\newpage
+
+\pagestyle{fancy}
+\cfoot{\thepage}
+\fancyhead{}
+\fancyhead[R]{\leftmark}
+
+\pagenumbering{arabic}
+\section{Introduction}
+\paragraph{}
+    Tabu Search is an algorithm created in 1986. It uses a deterministic heuristic on
+    local search methods. The goal is to take a potential solution, that's to stay a local optimum,  
+    and to check its immediate neighbors in the hope of finding an improved solution.
+    \footnote{https://en.wikipedia.org/wiki/Tabu\_search}
+
+\end{document}
