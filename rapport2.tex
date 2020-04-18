@@ -3,7 +3,6 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{fancyhdr}
-\usepackage{makecell}
 
 \begin{document}
 
@@ -31,5 +30,69 @@
     local search methods. The goal is to take a potential solution, that's to stay a local optimum,  
     and to check its immediate neighbors in the hope of finding an improved solution.
     \footnote{https://en.wikipedia.org/wiki/Tabu\_search}
+
+\section{Reference results on 50 and 100 cities with constant Tabu duration}
+\subsection{The two-best constant Tabu durations}
+\paragraph{}
+The two best constant Tabu durations we observed on the 50 cities problem were 20 and 80.
+They will be used in the following runs.
+\subsection{Run of the algorithm}
+\paragraph{}
+The algorithm was run 10 times with two different configurations.
+\newline
+First configuration : 
+\newline
+Data set : 50 cities 
+\newline
+Nb\_iterations: 10 000 
+\newline
+Duration\_tabou: 20
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5693}  & \multicolumn{1}{l|}{340} & \multicolumn{1}{l|}{3063}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{323} & \multicolumn{1}{l|}{2594}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{1756}  & \multicolumn{1}{l|}{2592}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{1691}  & \multicolumn{1}{l|}{2542}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5658}  & \multicolumn{1}{l|}{325}  & \multicolumn{1}{l|}{2272}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{533}  & \multicolumn{1}{l|}{2601}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5766}  & \multicolumn{1}{l|}{781}  & \multicolumn{1}{l|}{2547}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5756}  & \multicolumn{1}{l|}{122} & \multicolumn{1}{l|}{1907}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{603} & \multicolumn{1}{l|}{2443}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5851}  & \multicolumn{1}{l|}{52} & \multicolumn{1}{l|}{2568}  \\ \hline
+    \end{tabular}
+    \caption{Parameters found at each run for Duration\_Tabou equals to 20}
+  \end{table}
+
+  \newpage
+Second configuration : 
+\newline
+Data set : 50 cities 
+\newline
+Nb\_iterations: 10 000 
+\newline
+Duration\_tabou: 80
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5685}  & \multicolumn{1}{l|}{6890} & \multicolumn{1}{l|}{2314}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5655}  & \multicolumn{1}{l|}{261} & \multicolumn{1}{l|}{2295}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{214}  & \multicolumn{1}{l|}{2306}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5645}  & \multicolumn{1}{l|}{8000}  & \multicolumn{1}{l|}{2269}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5655}  & \multicolumn{1}{l|}{3449}  & \multicolumn{1}{l|}{2265}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{2015}  & \multicolumn{1}{l|}{2200}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{5226}  & \multicolumn{1}{l|}{2255}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{9327} & \multicolumn{1}{l|}{2270}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{7228} & \multicolumn{1}{l|}{2252}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{3185} & \multicolumn{1}{l|}{2293}  \\ \hline
+    \end{tabular}
+    \caption{Parameters found at each run for  Duration\_Tabou equals to 80}
+  \end{table}
 
 \end{document}
