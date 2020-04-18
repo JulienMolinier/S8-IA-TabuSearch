@@ -40,7 +40,7 @@ They will be used in the following runs.
 \paragraph{}
 The algorithm was run 10 times with two different configurations.
 \newline
-First configuration : 
+First configuration of the first version : 
 \newline
 Data set : 50 cities 
 \newline
@@ -64,11 +64,11 @@ Duration\_tabou: 20
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{603} & \multicolumn{1}{l|}{2443}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5851}  & \multicolumn{1}{l|}{52} & \multicolumn{1}{l|}{2568}  \\ \hline
     \end{tabular}
-    \caption{Parameters found at each run for Duration\_Tabou equals to 20}
+    \caption{Parameters found with the first version configuration at each run for Duration\_Tabou equals to 20}
   \end{table}
 
   \newpage
-Second configuration : 
+Second configuration of the first version : 
 \newline
 Data set : 50 cities 
 \newline
@@ -92,7 +92,63 @@ Duration\_tabou: 80
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{7228} & \multicolumn{1}{l|}{2252}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{3185} & \multicolumn{1}{l|}{2293}  \\ \hline
     \end{tabular}
-    \caption{Parameters found at each run for  Duration\_Tabou equals to 80}
+    \caption{Parameters found with the first version configuration at each run for  Duration\_Tabou equals to 80}
   \end{table}
+
+First configuration of the second version : 
+\newline
+Data set : 100 cities 
+\newline
+Nb\_iterations: 100 000 
+\newline
+Duration\_tabou: 20
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5241}  & \multicolumn{1}{l|}{510} & \multicolumn{1}{l|}{21229}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5885}  & \multicolumn{1}{l|}{258} & \multicolumn{1}{l|}{16894}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5985}  & \multicolumn{1}{l|}{321}  & \multicolumn{1}{l|}{30116}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5828}  & \multicolumn{1}{l|}{273}  & \multicolumn{1}{l|}{23779}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5558}  & \multicolumn{1}{l|}{271}  & \multicolumn{1}{l|}{21724}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5090}  & \multicolumn{1}{l|}{428}  & \multicolumn{1}{l|}{19988}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5544}  & \multicolumn{1}{l|}{412}  & \multicolumn{1}{l|}{28225}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5446}  & \multicolumn{1}{l|}{349} & \multicolumn{1}{l|}{24886}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5352}  & \multicolumn{1}{l|}{565} & \multicolumn{1}{l|}{19056}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{6521}  & \multicolumn{1}{l|}{250} & \multicolumn{1}{l|}{17376}  \\ \hline
+    \end{tabular}
+    \caption{Parameters found with the second version configuration at each run for Duration\_Tabou equals to 20}
+  \end{table}
+
+  \newpage
+  Second configuration of the second version : 
+\newline
+Data set : 100 cities 
+\newline
+Nb\_iterations: 100 000 
+\newline
+Duration\_tabou: 80
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5269}  & \multicolumn{1}{l|}{744} & \multicolumn{1}{l|}{21958}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{4944}  & \multicolumn{1}{l|}{5081} & \multicolumn{1}{l|}{23233}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5087}  & \multicolumn{1}{l|}{3168}  & \multicolumn{1}{l|}{24810}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5017}  & \multicolumn{1}{l|}{2749}  & \multicolumn{1}{l|}{24634}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{4813}  & \multicolumn{1}{l|}{5406}  & \multicolumn{1}{l|}{24784}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{4823}  & \multicolumn{1}{l|}{19847}  & \multicolumn{1}{l|}{25840}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5218}  & \multicolumn{1}{l|}{1609}  & \multicolumn{1}{l|}{23359 }  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{-} & \multicolumn{1}{l|}{-}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{-} & \multicolumn{1}{l|}{-}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{-}  & \multicolumn{1}{l|}{-} & \multicolumn{1}{l|}{-}  \\ \hline
+    \end{tabular}
+    \caption{Parameters found with the second version configuration at each run for Duration\_Tabou equals to 80}
+  \end{table}
+
 
 \end{document}
