@@ -181,6 +181,87 @@ the 100 cities problem.
 solution found was found only one time (4813 km). Let’s see if the random-based tabu duration
  increase the results when it comes to fitness, but also performance-wise.
 
+\section{Random based tabu duration RTD}
+\subsection{Running results}
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5720}  & \multicolumn{1}{l|}{67} & \multicolumn{1}{l|}{2664}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{49} & \multicolumn{1}{l|}{2561}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5716}  & \multicolumn{1}{l|}{40}  & \multicolumn{1}{l|}{2384}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5654}  & \multicolumn{1}{l|}{50}  & \multicolumn{1}{l|}{2580}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{52}  & \multicolumn{1}{l|}{2629}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5874}  & \multicolumn{1}{l|}{84}  & \multicolumn{1}{l|}{2653}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5771}  & \multicolumn{1}{l|}{143}  & \multicolumn{1}{l|}{2402}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5654}  & \multicolumn{1}{l|}{138} & \multicolumn{1}{l|}{2496}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5851}  & \multicolumn{1}{l|}{579} & \multicolumn{1}{l|}{2432}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5764}  & \multicolumn{1}{l|}{76} & \multicolumn{1}{l|}{2429}  \\ \hline
+    \end{tabular}
+    \caption{Results with RTD, alpha = 1, 10000 iterations and 50 cities}
+  \end{table}
+
+  \begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{3073} & \multicolumn{1}{l|}{2249}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{3489} & \multicolumn{1}{l|}{2207}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{9839}  & \multicolumn{1}{l|}{2184}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{855}  & \multicolumn{1}{l|}{2240}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{3241}  & \multicolumn{1}{l|}{2157}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{651}  & \multicolumn{1}{l|}{2248}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{7706}  & \multicolumn{1}{l|}{2184}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{949} & \multicolumn{1}{l|}{2232}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{5027} & \multicolumn{1}{l|}{2228}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{4030} & \multicolumn{1}{l|}{2238}  \\ \hline
+    \end{tabular}
+    \caption{Results with RTD, alpha = 5, 10000 iterations and 50 cities}
+  \end{table}
+
+  \begin{table}[h]
+  \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5896}  & \multicolumn{1}{l|}{2546} & \multicolumn{1}{l|}{25952}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5899}  & \multicolumn{1}{l|}{282} & \multicolumn{1}{l|}{27385}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5048}  & \multicolumn{1}{l|}{9669}  & \multicolumn{1}{l|}{15835}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5133}  & \multicolumn{1}{l|}{44492}  & \multicolumn{1}{l|}{28863}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5764}  & \multicolumn{1}{l|}{656}  & \multicolumn{1}{l|}{13546}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5810}  & \multicolumn{1}{l|}{172}  & \multicolumn{1}{l|}{18008}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5817}  & \multicolumn{1}{l|}{259}  & \multicolumn{1}{l|}{30071}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5062}  & \multicolumn{1}{l|}{11188} & \multicolumn{1}{l|}{21556}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5090}  & \multicolumn{1}{l|}{36155} & \multicolumn{1}{l|}{23889}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5495}  & \multicolumn{1}{l|}{1495} & \multicolumn{1}{l|}{24921}  \\ \hline
+    \end{tabular}
+    \caption{Results with RTD, alpha = 1, 100000 iterations and 100 cities}
+  \end{table}
+
+  \begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{llll}
+      \hline
+      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{4754}  & \multicolumn{1}{l|}{45519} & \multicolumn{1}{l|}{25963}  \\ \hline
+      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{4870}  & \multicolumn{1}{l|}{99729} & \multicolumn{1}{l|}{25511}  \\ \hline         
+      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{4786}  & \multicolumn{1}{l|}{82281}  & \multicolumn{1}{l|}{25414}  \\ \hline
+      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{4773}  & \multicolumn{1}{l|}{30009}  & \multicolumn{1}{l|}{25983}  \\ \hline
+      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{4751}  & \multicolumn{1}{l|}{93280}  & \multicolumn{1}{l|}{26120}  \\ \hline
+      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{4789}  & \multicolumn{1}{l|}{8601}  & \multicolumn{1}{l|}{25656}  \\ \hline
+      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{4763}  & \multicolumn{1}{l|}{78724}  & \multicolumn{1}{l|}{25795}  \\ \hline
+      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{4776}  & \multicolumn{1}{l|}{89195} & \multicolumn{1}{l|}{25634}  \\ \hline
+      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{4799}  & \multicolumn{1}{l|}{71755} & \multicolumn{1}{l|}{25981}  \\ \hline
+      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{4849}  & \multicolumn{1}{l|}{5520} & \multicolumn{1}{l|}{26944}  \\ \hline
+    \end{tabular}
+    \caption{Results with RTD, alpha = 5, 100000 iterations\_ and 100 cities}
+  \end{table}
 
 
 \end{document}
