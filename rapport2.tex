@@ -319,5 +319,32 @@ solution found was found only one time (4813 km). Let’s see if the random-base
     \end{pmatrix}
   \end{equation}
 
+  \newpage
+  \begin{table}[h]
+    \resizebox{\textwidth}{!}{%
+    \centering
+    \small
+    \begin{tabular}{lllll}
+    
+      \hline
+      \multicolumn{1}{|l|}{\textbf{}}& \multicolumn{1}{l|}{\textbf{Configuration\_6}}& \multicolumn{1}{l|}{\textbf{Configuration\_7}}& \multicolumn{1}{l|}{\textbf{Configuration\_8}} & \multicolumn{1}{l|}{\textbf{Configuration\_9}}\\ \hline
+      \multicolumn{1}{|l|}{Best solution fitness} & \multicolumn{1}{l|}{5743,4}  & \multicolumn{1}{l|}{5644 } & \multicolumn{1}{l|}{5501,4} & \multicolumn{1}{l|}{4791} \\ \hline
+      \multicolumn{1}{|l|}{Iteration of the best solution} & \multicolumn{1}{l|}{127.8}  & \multicolumn{1}{l|}{3886} & \multicolumn{1}{l|}{10 691.4} & \multicolumn{1}{l|}{60 461,3} \\ \hline         
+      \multicolumn{1}{|l|}{Nb\_Local\_minima} & \multicolumn{1}{l|}{2523}  & \multicolumn{1}{l|}{2216,7}  & \multicolumn{1}{l|}{23 002,6} & \multicolumn{1}{l|}{25 900,1} \\ \hline
+    \end{tabular}}
+    \caption{Average of the paramaters for the four configurations}
+  \end{table}
+
+\paragraph{}
+best solution quand alpha = 5 pour les deux sets de villes
+
+quand alpha = 1 : lower\_bound = 158 et upper\_bound = 474
+donc tabu duration [158:474], 316 valeurs random dans ce set
+
+quand alpha = 5 : lower\_bound = 790 et upper\_bound = 2 371
+donc tabu duration [790:2 371], 1581 valeurs random dans ce set
+
+CSQ : + de chances de tomber sur une grande Tabu\_duration, donc + de nouveaux voisins visités 
+Donc augmente les chances  de trouver un voisin plus interessant comme best solution
 
 \end{document}
