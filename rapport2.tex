@@ -31,13 +31,13 @@
     and to check its immediate neighbors in the hope of finding an improved solution.
     This time, some improvements of the Tabu Search algorithm have been made.
     This report presents the results and the conclusions of two improvements :  the Random-based Tabu Duration and the Frequency-based Tabu Duration.
-    At the end, every member presents his personal learning from this work. 
+    At the end, the members of the team present their personal learning from this work. 
     \footnote{https://en.wikipedia.org/wiki/Tabu\_search}
 
 \section{Reference results on 50 and 100 cities with constant Tabu duration}
 \subsection{The two-best constant Tabu durations}
 \paragraph{}
-The two best constant Tabu durations we observed on the 50 cities problem were 20 and 80.
+In the first report, the two best constant Tabu durations we observed on the 50 cities problem were 20 and 80.
 They will be used in the following runs.
 \subsection{Run of the algorithm}
 \paragraph{}
@@ -152,6 +152,7 @@ Duration\_tabou: 80
     \end{tabular}
     \caption{Parameters found with the second version configuration at each run for Duration\_Tabou equals to 80}
   \end{table}
+  \newpage
 
   \begin{table}[h]
     \resizebox{\textwidth}{!}{%
@@ -165,22 +166,22 @@ Duration\_tabou: 80
       \multicolumn{1}{|l|}{Iteration of the best solution} & \multicolumn{1}{l|}{5655}  & \multicolumn{1}{l|}{4578,5} & \multicolumn{1}{l|}{363,7} & \multicolumn{1}{l|}{6241,3} \\ \hline         
       \multicolumn{1}{|l|}{Nb\_Local\_minima} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{2271,9}  & \multicolumn{1}{l|}{22 327,3} & \multicolumn{1}{l|}{25 995} \\ \hline
     \end{tabular}}
-    \caption{Parameters found with the first version configuration at each run for  Duration\_Tabou equals to 80}
+    \caption{Average of the paramaters for the four configurations}
   \end{table}
   \paragraph{}
-  For 10 runs in each configuration, we can see that the fitness is the best 
+  For 10 runs in each configuration, we can see that the fitness is better 
   with a Tabu duration of 80, for both 50 and 100 cities samples. However, 
   the average iteration where the best fitness solution was found is clearly the 
-  lowest with a Tabu duration of 20, which means that the solution was found much quicker 
+  lowest with a Tabu duration of 20, which means that the solution was found quicker 
   than with 80, again for both cities samples. 
   \paragraph{}What is quite interesting is that the best solution 
-  was found around the same iteration with a Tabu duration of 20 for both samples. The maximum 
-  iteration was 1756, and strangely for the 50 cities problem. In both cases it appears that we 
+  was found around the same iteration with a Tabu duration of 20 for both samples. 
+  The maximum iteration was 1756, and strangely for the 50 cities problem. In both cases it appears that we 
   never need respectively 10 000 and 100 000 iterations to find the best solution.
 \paragraph{}The number of local minimum visited are really important for the 100 000 iterations runs, 
 of course. Unexpectedly, more local minimum were visited with a tabu duration of 80 for 
-the 100 cities problem.
-\paragraph{}What we can say by far is that the 100 cities problem is a really complex one, and the best 
+the 100 cities problem, than with the tabu duration of 20.
+\paragraph{}What we can say so far is that the 100 cities problem is a really complex one, and the best 
 solution found was found only one time (4813 km). Let’s see if the random-based tabu duration
  increase the results when it comes to fitness, but also performance-wise.
 
