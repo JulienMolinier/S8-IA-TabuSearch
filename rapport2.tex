@@ -163,7 +163,7 @@ Duration\_tabou: 80
       \hline
       \multicolumn{1}{|l|}{\textbf{}}& \multicolumn{1}{l|}{\textbf{Configuration\_1}}& \multicolumn{1}{l|}{\textbf{Configuration\_2}}& \multicolumn{1}{l|}{\textbf{Configuration\_3}} & \multicolumn{1}{l|}{\textbf{Configuration\_4}}\\ \hline
       \multicolumn{1}{|l|}{Best solution fitness} & \multicolumn{1}{l|}{5703}  & \multicolumn{1}{l|}{5652,9 } & \multicolumn{1}{l|}{5645} & \multicolumn{1}{l|}{4991,16} \\ \hline
-      \multicolumn{1}{|l|}{Iteration of the best solution} & \multicolumn{1}{l|}{5655}  & \multicolumn{1}{l|}{4578,5} & \multicolumn{1}{l|}{363,7} & \multicolumn{1}{l|}{6241,3} \\ \hline         
+      \multicolumn{1}{|l|}{Iteration of the best solution} & \multicolumn{1}{l|}{652,6}  & \multicolumn{1}{l|}{4578,5} & \multicolumn{1}{l|}{363,7} & \multicolumn{1}{l|}{6241,3} \\ \hline         
       \multicolumn{1}{|l|}{Nb\_Local\_minima} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{2271,9}  & \multicolumn{1}{l|}{22 327,3} & \multicolumn{1}{l|}{25 995} \\ \hline
     \end{tabular}}
     \caption{Average of the paramaters for the four configurations}
@@ -175,7 +175,9 @@ Duration\_tabou: 80
   lowest with a Tabu duration of 20, which means that the solution was found quicker 
   than with 80, again for both cities samples. 
   \paragraph{}What is quite interesting is that the best solution 
-  was found around the same iteration with a Tabu duration of 20 for both samples. 
+  was found around the same iteration with a Tabu duration of 20 for both samples for each run (652,6 against 363,7). 
+  It is even a little bit faster for the 100 cities problem, but it's about the same rough size, in comparison of the 10 000 and 100 000 iterations respectively
+   taken to run the algorithm.
   The maximum iteration was 1756, and strangely for the 50 cities problem. In both cases it appears that we 
   never need respectively 10 000 and 100 000 iterations to find the best solution.
 \paragraph{}The number of local minimum visited are really important for the 100 000 iterations runs, 
