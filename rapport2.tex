@@ -52,7 +52,7 @@ Nb\_iterations: 10 000
 Duration\_tabou: 20
 \begin{table}[h]
     \centering
-    \small
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{llll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
@@ -66,7 +66,8 @@ Duration\_tabou: 20
       \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5756}  & \multicolumn{1}{l|}{122} & \multicolumn{1}{l|}{1907}  \\ \hline
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{603} & \multicolumn{1}{l|}{2443}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5851}  & \multicolumn{1}{l|}{52} & \multicolumn{1}{l|}{2568}  \\ \hline
-    \end{tabular}
+    \end{tabular}%
+    }
     \caption{Parameters found with the first version configuration at each run for Duration\_Tabou equals to 20}
   \end{table}
 
@@ -80,7 +81,7 @@ Nb\_iterations: 10 000
 Duration\_tabou: 80
 \begin{table}[h]
     \centering
-    \small
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{llll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
@@ -94,7 +95,8 @@ Duration\_tabou: 80
       \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{9327} & \multicolumn{1}{l|}{2270}  \\ \hline
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{7228} & \multicolumn{1}{l|}{2252}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{3185} & \multicolumn{1}{l|}{2293}  \\ \hline
-    \end{tabular}
+    \end{tabular}%
+    }
     \caption{Parameters found with the first version configuration at each run for  Duration\_Tabou equals to 80}
   \end{table}
 
@@ -107,7 +109,7 @@ Nb\_iterations: 100 000
 Duration\_tabou: 20
 \begin{table}[h]
     \centering
-    \small
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{llll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
@@ -121,7 +123,8 @@ Duration\_tabou: 20
       \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5446}  & \multicolumn{1}{l|}{349} & \multicolumn{1}{l|}{24886}  \\ \hline
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5352}  & \multicolumn{1}{l|}{565} & \multicolumn{1}{l|}{19056}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{6521}  & \multicolumn{1}{l|}{250} & \multicolumn{1}{l|}{17376}  \\ \hline
-    \end{tabular}
+    \end{tabular}%
+    }
     \caption{Parameters found with the second version configuration at each run for Duration\_Tabou equals to 20}
   \end{table}
 
@@ -135,7 +138,7 @@ Nb\_iterations: 100 000
 Duration\_tabou: 80
 \begin{table}[h]
     \centering
-    \small
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{llll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
@@ -149,7 +152,8 @@ Duration\_tabou: 80
       \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{4911}  & \multicolumn{1}{l|}{6127} & \multicolumn{1}{l|}{32819}  \\ \hline
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{4979}  & \multicolumn{1}{l|}{3874} & \multicolumn{1}{l|}{29920}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{4855}  & \multicolumn{1}{l|}{13808} & \multicolumn{1}{l|}{28593}  \\ \hline
-    \end{tabular}
+    \end{tabular}%
+    }
     \caption{Parameters found with the second version configuration at each run for Duration\_Tabou equals to 80}
   \end{table}
   \newpage
@@ -157,7 +161,6 @@ Duration\_tabou: 80
   \begin{table}[h]
     \resizebox{\textwidth}{!}{%
     \centering
-    \small
     \begin{tabular}{lllll}
     
       \hline
@@ -189,38 +192,41 @@ solution found was found only one time (4813 km). Let’s see if the random-base
 
 \section{Random based tabu duration RTD}
 \subsection{Running results}
+\newpage
 \begin{table}[h]
     \centering
-    \small
-    \begin{tabular}{llll}
-      \hline
-      \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
-      \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5720}  & \multicolumn{1}{l|}{67} & \multicolumn{1}{l|}{2664}  \\ \hline
-      \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{49} & \multicolumn{1}{l|}{2561}  \\ \hline         
-      \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5716}  & \multicolumn{1}{l|}{40}  & \multicolumn{1}{l|}{2384}  \\ \hline
-      \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5654}  & \multicolumn{1}{l|}{50}  & \multicolumn{1}{l|}{2580}  \\ \hline
-      \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{52}  & \multicolumn{1}{l|}{2629}  \\ \hline
-      \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5874}  & \multicolumn{1}{l|}{84}  & \multicolumn{1}{l|}{2653}  \\ \hline
-      \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5771}  & \multicolumn{1}{l|}{143}  & \multicolumn{1}{l|}{2402}  \\ \hline
-      \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5654}  & \multicolumn{1}{l|}{138} & \multicolumn{1}{l|}{2496}  \\ \hline
-      \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5851}  & \multicolumn{1}{l|}{579} & \multicolumn{1}{l|}{2432}  \\ \hline
-      \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5764}  & \multicolumn{1}{l|}{76} & \multicolumn{1}{l|}{2429}  \\ \hline
-    \end{tabular}
+    \resizebox{\textwidth}{!}{%
+      \begin{tabular}{llll}
+        \hline
+        \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+        \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5720}  & \multicolumn{1}{l|}{67} & \multicolumn{1}{l|}{2664}  \\ \hline
+        \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{49} & \multicolumn{1}{l|}{2561}  \\ \hline         
+        \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5716}  & \multicolumn{1}{l|}{40}  & \multicolumn{1}{l|}{2384}  \\ \hline
+        \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5654}  & \multicolumn{1}{l|}{50}  & \multicolumn{1}{l|}{2580}  \\ \hline
+        \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{52}  & \multicolumn{1}{l|}{2629}  \\ \hline
+        \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5874}  & \multicolumn{1}{l|}{84}  & \multicolumn{1}{l|}{2653}  \\ \hline
+        \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5771}  & \multicolumn{1}{l|}{143}  & \multicolumn{1}{l|}{2402}  \\ \hline
+        \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5654}  & \multicolumn{1}{l|}{138} & \multicolumn{1}{l|}{2496}  \\ \hline
+        \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5851}  & \multicolumn{1}{l|}{579} & \multicolumn{1}{l|}{2432}  \\ \hline
+        \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5764}  & \multicolumn{1}{l|}{76} & \multicolumn{1}{l|}{2429}  \\ \hline
+      \end{tabular}%
+    }
     \caption{Results with RTD, alpha = 1, 10000 iterations and 50 cities}
   \end{table}
 
   \begin{equation}
-    \begin{pmatrix} 10 & 4 & 4 & 6 & 6 & 0 & 8 & 0 & 6 & 8 \\
+    \tag{Mean Tabu duration by city table 6}
+    \begin{smallmatrix} 10 & 4 & 4 & 6 & 6 & 0 & 8 & 0 & 6 & 8 \\
                     7 & 5 & 5 & 7 & 4 & 4 & 9 & 7 & 4 & 4 \\
                     4 & 4 & 10 & 0 & 10 & 0 & 5 & 4 & 4 & 4\\
                     0 & 4 & 4 & 4 & 4 & 4 & 4 & 7 & 6 & 0 \\
                     5 & 8 & 5 & 4 & 4 & 4 & 4 & 4 & 0 & 4 
-    \end{pmatrix}
+    \end{smallmatrix}
   \end{equation}
 
   \begin{table}[h]
     \centering
-    \small
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{llll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
@@ -234,22 +240,26 @@ solution found was found only one time (4813 km). Let’s see if the random-base
       \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{949} & \multicolumn{1}{l|}{2232}  \\ \hline
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{5027} & \multicolumn{1}{l|}{2228}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{4030} & \multicolumn{1}{l|}{2238}  \\ \hline
-    \end{tabular}
+    \end{tabular}%
+    }
     \caption{Results with RTD, alpha = 5, 10000 iterations and 50 cities}
   \end{table}
 
+  \newpage
+
   \begin{equation}
-    \begin{pmatrix} 38 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 \\
+    \tag{Mean Tabu duration by city table 7}
+    \begin{smallmatrix} 38 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 \\
                     18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 \\
                     18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 18\\
                     18 & 18 & 18 & 18 & 18 & 18 & 18 & 18 & 24 & 34 \\
                     23 & 27 & 38 & 18 & 18 & 18 & 18 & 18 & 37 & 18 
-    \end{pmatrix}
+    \end{smallmatrix}
   \end{equation}
 
   \begin{table}[h]
   \centering
-    \small
+  \resizebox{\textwidth}{!}{%
     \begin{tabular}{llll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
@@ -263,12 +273,14 @@ solution found was found only one time (4813 km). Let’s see if the random-base
       \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5062}  & \multicolumn{1}{l|}{11188} & \multicolumn{1}{l|}{21556}  \\ \hline
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5090}  & \multicolumn{1}{l|}{36155} & \multicolumn{1}{l|}{23889}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5495}  & \multicolumn{1}{l|}{1495} & \multicolumn{1}{l|}{24921}  \\ \hline
-    \end{tabular}
+    \end{tabular}%
+  }
     \caption{Results with RTD, alpha = 1, 100000 iterations and 100 cities}
   \end{table}
 
   \begin{equation}
-    \begin{pmatrix} 0 & 5 & 10 & 5 & 5 & 10 & 5 & 5 & 11 & 5 \\
+    \tag{Mean Tabu duration by city table 8}
+    \begin{smallmatrix} 0 & 5 & 10 & 5 & 5 & 10 & 5 & 5 & 11 & 5 \\
                     5 & 5 & 5 & 5 & 5 & 6 & 5 & 5 & 5 & 5 \\
                     5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5\\
                     5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\
@@ -281,12 +293,12 @@ solution found was found only one time (4813 km). Let’s see if the random-base
                     5 & 5 & 5 & 5 & 5 & 6 & 5 & 5 & 5 & 5 \\
                     5 & 5 & 5 & 5 & 5 & 5 & 8 & 9 & 5 & 5\\
                     5 & 5 & 10 & 5 & 8 & 5 & 5 & 7 & 10 & 5
-    \end{pmatrix}
+    \end{smallmatrix}
   \end{equation}
 
   \begin{table}[h]
     \centering
-    \small
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{llll}
       \hline
       \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
@@ -300,12 +312,14 @@ solution found was found only one time (4813 km). Let’s see if the random-base
       \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{4776}  & \multicolumn{1}{l|}{89195} & \multicolumn{1}{l|}{25634}  \\ \hline
       \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{4799}  & \multicolumn{1}{l|}{71755} & \multicolumn{1}{l|}{25981}  \\ \hline
       \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{4849}  & \multicolumn{1}{l|}{5520} & \multicolumn{1}{l|}{26944}  \\ \hline
-    \end{tabular}
+    \end{tabular}%
+    }
     \caption{Results with RTD, alpha = 5, 100000 iterations\_ and 100 cities}
   \end{table}
 
   \begin{equation}
-    \begin{pmatrix} 62 & 50 & 50 & 53 & 50 & 48 & 50 & 50 & 49 & 50 \\
+    \tag{Mean Tabu duration by city table 9}
+    \begin{smallmatrix} 62 & 50 & 50 & 53 & 50 & 48 & 50 & 50 & 49 & 50 \\
                     50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 51 \\
                     50 & 49 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 \\
                     50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 \\
@@ -318,14 +332,12 @@ solution found was found only one time (4813 km). Let’s see if the random-base
                     50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 51 & 50 \\
                     50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 50 & 51 \\
                     50 & 50 & 50 & 51 & 50 & 50 & 50 & 50 & 50 & 50
-    \end{pmatrix}
+    \end{smallmatrix}
   \end{equation}
 
-  \newpage
   \begin{table}[h]
     \resizebox{\textwidth}{!}{%
     \centering
-    \small
     \begin{tabular}{lllll}
     
       \hline
@@ -333,29 +345,21 @@ solution found was found only one time (4813 km). Let’s see if the random-base
       \multicolumn{1}{|l|}{Best solution fitness} & \multicolumn{1}{l|}{5743,4}  & \multicolumn{1}{l|}{5644 } & \multicolumn{1}{l|}{5501,4} & \multicolumn{1}{l|}{4791} \\ \hline
       \multicolumn{1}{|l|}{Iteration of the best solution} & \multicolumn{1}{l|}{127.8}  & \multicolumn{1}{l|}{3886} & \multicolumn{1}{l|}{10 691.4} & \multicolumn{1}{l|}{60 461,3} \\ \hline         
       \multicolumn{1}{|l|}{Nb\_Local\_minima} & \multicolumn{1}{l|}{2523}  & \multicolumn{1}{l|}{2216,7}  & \multicolumn{1}{l|}{23 002,6} & \multicolumn{1}{l|}{25 900,1} \\ \hline
-    \end{tabular}}
+    \end{tabular}%
+    }
     \caption{Average of the paramaters for the four configurations}
   \end{table}
 
 \paragraph{}
+best solution quand alpha = 5 pour les deux sets de villes
 
-We can observe that the solution is better for the configurations 7 and 9, that's to say when
-alpha = 5 for the 50 and the 100 set of cities.
+quand alpha = 1 : lower\_bound = 158 et upper\_bound = 474
+donc tabu duration [158:474], 316 valeurs random dans ce set
 
-Let's calculate the bounds.
-When alpha = 1, lower\_bound = 158 and upper\_bound = 474.
-Consequently, the tabu duration is included in S1 = [158:474]. 
-There are 316 values in this set, so the tabu duration can take 316 random values.
+quand alpha = 5 : lower\_bound = 790 et upper\_bound = 2 371
+donc tabu duration [790:2 371], 1581 valeurs random dans ce set
 
-When alpha = 5, lower\_bound = 790 and upper\_bound = 2 371.
-The tabu duration is included in S2 = [790:2 371].
-There are 1581 values in this set, so the tabu duration can take 1581 random values.
-
-Regarding S1 and S2, the probability to pick a high random value for the tabu\_duration is higher in S2 than in S1.
-The more high tabu\_duration is, the more visited are the neigbors of the solution because it prohibits to reeuse the
-same neighbors in the solution.
-
-So using alpha = 5 raise the probability to find a neighbor more intersting than the best solution. More neighbors
-are explored, 26 000 for the configuration\_9 against 23 000 for the configuration\_8. 
+CSQ : + de chances de tomber sur une grande Tabu\_duration, donc + de nouveaux voisins visités 
+Donc augmente les chances  de trouver un voisin plus interessant comme best solution
 
 \end{document}
