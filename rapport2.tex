@@ -338,15 +338,24 @@ solution found was found only one time (4813 km). Let’s see if the random-base
   \end{table}
 
 \paragraph{}
-best solution quand alpha = 5 pour les deux sets de villes
 
-quand alpha = 1 : lower\_bound = 158 et upper\_bound = 474
-donc tabu duration [158:474], 316 valeurs random dans ce set
+We can observe that the solution is better for the configurations 7 and 9, that's to say when
+alpha = 5 for the 50 and the 100 set of cities.
 
-quand alpha = 5 : lower\_bound = 790 et upper\_bound = 2 371
-donc tabu duration [790:2 371], 1581 valeurs random dans ce set
+Let's calculate the bounds.
+When alpha = 1, lower\_bound = 158 and upper\_bound = 474.
+Consequently, the tabu duration is included in S1 = [158:474]. 
+There are 316 values in this set, so the tabu duration can take 316 random values.
 
-CSQ : + de chances de tomber sur une grande Tabu\_duration, donc + de nouveaux voisins visités 
-Donc augmente les chances  de trouver un voisin plus interessant comme best solution
+When alpha = 5, lower\_bound = 790 and upper\_bound = 2 371.
+The tabu duration is included in S2 = [790:2 371].
+There are 1581 values in this set, so the tabu duration can take 1581 random values.
+
+Regarding S1 and S2, the probability to pick a high random value for the tabu\_duration is higher in S2 than in S1.
+The more high tabu\_duration is, the more visited are the neigbors of the solution because it prohibits to reeuse the
+same neighbors in the solution.
+
+So using alpha = 5 raise the probability to find a neighbor more intersting than the best solution. More neighbors
+are explored, 26 000 for the configuration\_9 against 23 000 for the configuration\_8. 
 
 \end{document}
