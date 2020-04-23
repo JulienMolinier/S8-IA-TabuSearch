@@ -181,7 +181,7 @@ Duration\_tabou: 80
   The maximum iteration was 1756, and strangely for the 50 cities problem. In both cases it appears that we 
   never need respectively 10 000 and 100 000 iterations to find the best solution.
 \paragraph{}The number of local minimum visited are really important for the 100 000 iterations runs, 
-of course. Unexpectedly, more local minimum were visited with a tabu duration of 80 for 
+of course. As expected, more local minimum were visited with a tabu duration of 80 for 
 the 100 cities problem, than with the tabu duration of 20.
 \paragraph{}What we can say so far is that the 100 cities problem is a really complex one, and the best 
 solution found was found only one time (4813 km). Let’s see if the random-based tabu duration
@@ -348,5 +348,166 @@ donc tabu duration [790:2 371], 1581 valeurs random dans ce set
 
 CSQ : + de chances de tomber sur une grande Tabu\_duration, donc + de nouveaux voisins visités 
 Donc augmente les chances  de trouver un voisin plus interessant comme best solution
+
+\newpage
+\section{Frequency-based tabu duration FTD}
+
+\subsection{Run the algorithm}
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{llll}
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+    \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5649}  & \multicolumn{1}{l|}{8100} & \multicolumn{1}{l|}{2525}  \\ \hline
+    \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5773}  & \multicolumn{1}{l|}{154} & \multicolumn{1}{l|}{2425}  \\ \hline         
+    \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5645}  & \multicolumn{1}{l|}{2015}  & \multicolumn{1}{l|}{2478}  \\ \hline
+    \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5771}  & \multicolumn{1}{l|}{358}  & \multicolumn{1}{l|}{2495}  \\ \hline
+    \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5768}  & \multicolumn{1}{l|}{2716}  & \multicolumn{1}{l|}{2364}  \\ \hline
+    \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5839}  & \multicolumn{1}{l|}{1023}  & \multicolumn{1}{l|}{2513}  \\ \hline
+    \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5715}  & \multicolumn{1}{l|}{1434}  & \multicolumn{1}{l|}{2421}  \\ \hline
+    \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5839}  & \multicolumn{1}{l|}{698} & \multicolumn{1}{l|}{2493}  \\ \hline
+    \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5654}  & \multicolumn{1}{l|}{8093} & \multicolumn{1}{l|}{2562}  \\ \hline
+    \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5768}  & \multicolumn{1}{l|}{2555} & \multicolumn{1}{l|}{2236}  \\ \hline
+  \end{tabular}
+  \caption{Results with FTD1, alpha = 1, 10 000 iterations\_ and 50 cities}
+\end{table}
+
+\begin{equation}
+  \tag{Mean Tabu Duration for each city (alpha = 1 and 50 cities)}
+  \begin{pmatrix} 10 & 16.45 & 10 & 10 & 0 & 10.30 & 14.99 & 15.52 & 10.67 & 10.66 \\
+                  10.57 & 10.77 & 10.57 & 10 & 10.18 & 14.07 & 12.54 & 14.04 & 11.70 & 10.54 \\
+                  10.73 & 10.73 & 13.41 & 13.50 & 11.01 & 11.49 & 11.59 & 10 & 11.79 & 11.54 \\
+                  11.57 & 11.63 & 11.90 & 11.54 & 10 & 12.23 & 11.81 & 10.62 & 11.58 & 11.46 \\
+                  10.85 & 10.27 & 10 & 10 & 10.34 & 10.34 & 15.87 & 15.86 & 10 & 16.47 
+  \end{pmatrix}
+\end{equation}
+
+\paragraph{}
+Above, the matrix shows the mean tabu duration for each city during one of the runs with FTD1
+where there are 50 cities and alpha is 1. We can see that some cities weren't visited enough times
+to have a Tabu duration changed so the mean value is 10 (same as default constant). We can also
+see that on 10 000 iterations, one city hasn't been visited once so the mean value is 0.
+
+\newpage
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{llll}
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+    \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{5768}  & \multicolumn{1}{l|}{8725} & \multicolumn{1}{l|}{2273}  \\ \hline
+    \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{5750}  & \multicolumn{1}{l|}{7432} & \multicolumn{1}{l|}{2369}  \\ \hline         
+    \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{9855}  & \multicolumn{1}{l|}{2402}  \\ \hline
+    \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{140}  & \multicolumn{1}{l|}{2320}  \\ \hline
+    \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{174}  & \multicolumn{1}{l|}{2349}  \\ \hline
+    \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{6833}  & \multicolumn{1}{l|}{2351}  \\ \hline
+    \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{5786}  & \multicolumn{1}{l|}{8073}  & \multicolumn{1}{l|}{2293}  \\ \hline
+    \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{5723}  & \multicolumn{1}{l|}{3714} & \multicolumn{1}{l|}{2389}  \\ \hline
+    \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5763}  & \multicolumn{1}{l|}{7582} & \multicolumn{1}{l|}{2177}  \\ \hline
+    \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{9468} & \multicolumn{1}{l|}{2370}  \\ \hline
+  \end{tabular}
+  \caption{Results with FTD1, alpha = 5, 10 000 iterations\_ and 50 cities}
+\end{table}
+
+\begin{equation}
+  \tag{Mean Tabu Duration for each city (alpha = 5 and 50 cities)}
+  \begin{pmatrix} 10 & 29.06 & 15.66 & 11.66 & 12.75 & 13.61 & 18.43 & 18.69 & 15.71 & 15.70 \\
+    15.52 & 15.98 & 14.86 & 11.27 & 15.72 & 19.20 & 18.55 & 18.51 & 17.44 & 17.84 \\
+    18.71 & 10.04 & 15.30 & 20.54 & 20.62 & 18.35 & 20.92 & 20.42 & 10.23 & 10.14 \\
+    10 & 12.21 & 15.67 & 22.67 & 24.03 & 23.14 & 19.26 & 12.41 & 10 & 10 \\
+    0 & 10 & 10 & 11.21 & 16.36 & 16.10 & 31.50 & 31.55 & 10 & 33.5 
+  \end{pmatrix}
+\end{equation}
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{llll}
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+    \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{4784}  & \multicolumn{1}{l|}{82879} & \multicolumn{1}{l|}{24121}  \\ \hline
+    \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{4967}  & \multicolumn{1}{l|}{86786} & \multicolumn{1}{l|}{26746}  \\ \hline         
+    \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{4929}  & \multicolumn{1}{l|}{87325}  & \multicolumn{1}{l|}{22865}  \\ \hline
+    \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{4802}  & \multicolumn{1}{l|}{66944}  & \multicolumn{1}{l|}{28916}  \\ \hline
+    \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{4853}  & \multicolumn{1}{l|}{96413}  & \multicolumn{1}{l|}{22934}  \\ \hline
+    \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{4897}  & \multicolumn{1}{l|}{82213}  & \multicolumn{1}{l|}{25056}  \\ \hline
+    \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{4876}  & \multicolumn{1}{l|}{82862}  & \multicolumn{1}{l|}{23725}  \\ \hline
+    \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{4881}  & \multicolumn{1}{l|}{98213} & \multicolumn{1}{l|}{23867}  \\ \hline
+    \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{4797}  & \multicolumn{1}{l|}{94503} & \multicolumn{1}{l|}{23282}  \\ \hline
+    \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{4878}  & \multicolumn{1}{l|}{70275} & \multicolumn{1}{l|}{26552}  \\ \hline
+  \end{tabular}
+  \caption{Results with FTD1, alpha = 1, 100 000 iterations\_ and 100 cities}
+\end{table}
+
+\begin{equation}
+  \tag{Mean Tabu Duration for each city (alpha = 1 and 100 cities)}
+  \begin{pmatrix} 10 & 48.72 & 10.45 & 12.15 & 11.02 & 10.43 & 10.52 & 10 & 10 & 10 \\
+    10.28 & 10.00 & 10.26 & 10 & 10.74 & 10.09 & 10.43 & 10.04 & 10.89 & 10.01 \\
+    10.32 & 10.01 & 10.77 & 10 & 10.68 & 10.71 & 10.45 & 10.13 & 10.57 & 10.51 \\
+    10.22 & 10.17 & 10.15 & 10.54 & 10.69 & 10.26 & 10.54 & 10.45 & 12.12 & 10.53 \\
+    10.51 & 10.40 & 10.44 & 10.03 & 11.19 & 10.16 & 10.68 & 10.13 & 10.74 & 10.69 \\
+    10.86 & 10.04 & 10.76 & 10.88 & 10.21 & 10.56 & 10.57 & 10.91 & 10.56 & 10 \\
+    10.13 & 10.58 & 10.21 & 10.51 & 10.81 & 10.35 & 10.42 & 11.37 & 11.14 & 11.15 \\
+    10.99 & 10.75 & 10.87 & 10.22 & 10.43 & 11.67 & 11.18 & 10.41 & 11.05 & 11.38 \\
+    12.85 & 10.89 & 11.13 & 11.70 & 11.99 & 10.70 & 11.86 & 10.39 & 11.76 & 11.88 \\
+    10.10 & 11.23 & 11.24 & 11.30 & 10.60 & 10.97 & 12.67 & 10 & 10 & 48.75
+  \end{pmatrix}
+\end{equation}
+
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{llll}
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+    \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{4745}  & \multicolumn{1}{l|}{79627} & \multicolumn{1}{l|}{24912}  \\ \hline
+    \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{4886}  & \multicolumn{1}{l|}{26461} & \multicolumn{1}{l|}{26241}  \\ \hline         
+    \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{4853}  & \multicolumn{1}{l|}{20135}  & \multicolumn{1}{l|}{25077}  \\ \hline
+    \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{4830}  & \multicolumn{1}{l|}{99768}  & \multicolumn{1}{l|}{25720}  \\ \hline
+    \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{4745}  & \multicolumn{1}{l|}{96793}  & \multicolumn{1}{l|}{25020}  \\ \hline
+    \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{4757}  & \multicolumn{1}{l|}{95653}  & \multicolumn{1}{l|}{24568}  \\ \hline
+    \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{4802}  & \multicolumn{1}{l|}{71854}  & \multicolumn{1}{l|}{25464}  \\ \hline
+    \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{4757}  & \multicolumn{1}{l|}{55562} & \multicolumn{1}{l|}{24828}  \\ \hline
+    \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{4771}  & \multicolumn{1}{l|}{92292} & \multicolumn{1}{l|}{25946}  \\ \hline
+    \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{4811}  & \multicolumn{1}{l|}{32021} & \multicolumn{1}{l|}{24230}  \\ \hline
+  \end{tabular}
+  \caption{Results with FTD1, alpha = 5, 100 000 iterations\_ and 100 cities}
+\end{table}
+
+\begin{equation}
+  \tag{Mean Tabu Duration for each city (alpha = 5 and 100 cities)}
+  \begin{pmatrix} 10 & 210.53 & 10.40 & 10.10 & 10.36 & 10.06 & 10.50 & 10.31 & 10.55 & 10.26 \\
+    10.6132 & 10.51 & 10.68 & 10.22 & 10.59 & 10.31 & 10.23 & 10.35 & 10.13 & 10.32 \\
+    10.1604 & 10.31 & 10.35 & 10.32 & 10.31 & 10.19 & 10.30 & 10.28 & 10.35 & 10.14 \\
+    10.2508 & 10.58 & 10.29 & 10.36 & 10.29 & 10.40 & 10.32 & 10.41 & 10.40 & 10.62 \\
+    10.4654 & 10.37 & 10.19 & 10.28 & 10.27 & 10.31 & 10.25 & 10.24 & 10.34 & 10.38 \\
+    10.4359 & 10.40 & 10.31 & 10.37 & 10.47 & 10.38 & 10.41 & 10.50 & 10.46 & 10.40 \\
+    10.6672 & 10.43 & 10.71 & 10.35 & 10.51 & 10.33 & 10.40 & 10.46 & 10.33 & 10.28 \\
+    10.4995 & 10.39 & 10.46 & 10.20 & 10.31 & 10.38 & 10.23 & 10.43 & 10.40 & 10.30 \\
+    10.4488 & 10.69 & 10.34 & 10.21 & 10.26 & 10.24 & 10.49 & 10.60 & 10.22 & 10.26 \\
+    10.5303 & 10.92 & 11.45 & 11.35 & 10.30 & 10.17 & 10.36 & 11.46 & 10.11 & 211.52
+  \end{pmatrix}
+\end{equation}
+
+\newpage
+\begin{table}[h]
+  \resizebox{\textwidth}{!}{%
+  \centering
+  \small
+  \begin{tabular}{lllll}
+  
+    \hline
+    \multicolumn{1}{|l|}{\textbf{}}& \multicolumn{1}{l|}{\textbf{Configuration\_11}}& \multicolumn{1}{l|}{\textbf{Configuration\_12}}& \multicolumn{1}{l|}{\textbf{Configuration\_13}} & \multicolumn{1}{l|}{\textbf{Configuration\_14}}\\ \hline
+    \multicolumn{1}{|l|}{Best solution fitness} & \multicolumn{1}{l|}{5742,1}  & \multicolumn{1}{l|}{5701 } & \multicolumn{1}{l|}{4866,4} & \multicolumn{1}{l|}{4795,7} \\ \hline
+    \multicolumn{1}{|l|}{Iteration of the best solution} & \multicolumn{1}{l|}{2714.6}  & \multicolumn{1}{l|}{6199.6} & \multicolumn{1}{l|}{84841,3} & \multicolumn{1}{l|}{67 016,6} \\ \hline         
+    \multicolumn{1}{|l|}{Nb\_Local\_minima} & \multicolumn{1}{l|}{2451.2}  & \multicolumn{1}{l|}{2329,3}  & \multicolumn{1}{l|}{24 806,4} & \multicolumn{1}{l|}{25 200,6} \\ \hline
+  \end{tabular}}
+  \caption{Average of the results for the four runs with FTD1}
+\end{table}
+
+\subsection{Algorithm performances for FTD1}
+
 
 \end{document}
