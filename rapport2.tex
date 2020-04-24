@@ -707,4 +707,60 @@ this problem size. A greater alpha would probably create the same problem as wit
   \caption{Average of the parameters for the four configurations}
 \end{table}
 
+\newpage
+\paragraph{}
+For all configurations, it is intersting to see that with alpha equals to 5, the solution is better when it comes to fitness. We can explain this by saying that the bigger alpha is, the longer
+   the tabu duration for a move bewteen two cities is,
+   so a move is considered as Tabu for a longer time with alpha equals to 5. This mean that more solutions should be explored
+   and that the algorithm is more able to find the best solution (this is verified for both samples).
+\paragraph{}
+   What is trickier to explain is the part where the best solution is found quickier with alpha = 1 for 100 cities, while it is
+   the contrary for 50 cities. Maybe this can be due to the fact that the 100 cities problem is way more complex (plus the distance
+   between two cities is different depending on the way you travel...). For the 100 city problem, we’re doing 100 000 iterations,
+    so maybe a big enough alpha will quickly banned moves containing a city : we’re exploring more and more, and banning every city nearby
+    going slowly to the solution.
+    \paragraph{}
+    Comparing to the FTD1, we’re banning moves a longer time for the 100 city problem with alpha equals
+    to 5 : we’re setting a tabu duration for a move by taking in consideration the number of times
+    we went onto the city we chose first. Thus, we can ban this move a way longer time because there’s 100
+    possibilites of choosing this city in another move,
+    which will quickly increase the number of times we visited the city, so the tabu duration.
+    This can explain why we’re exploring an area completely, and waiting until the last moment to
+    explore another part, quickly being considered Tabu for a long time.
+    Globally, increasing the alpha increases the fitness.
+
+\subsection{Personnal learnings}
+
+\paragraph{}
+During this project I have learned a new way to find the best solution in a large dimension problem with a lot of variables. 
+I had never heard about Tabu algorithm before so it was quite interesting to discover.
+I found really interesting the idea to force an algorithm to explore another way even if it 
+won't improve the best solution immediatly. Julien Molinier
+
+\paragraph{}
+I had already heard about the Tabu search algorithm but it was the first time I had to work on its implementation. 
+First of all, it was not that easy to understand it. 
+But this work was necessary to understand the results of all the runs and draw some conclusions. 
+Playing with the parameters, understanding various implementations (RTD, FTD) put the light on the complexity 
+and all the angles this algorithm can be turned. Also, this part reflects how important it is to 
+elaborate a strategy to solve a given problem.
+Fanny Kalinowski
+
+\paragraph{}
+My personal learning from this work is the usage of a very powerful algorithm. 
+It was really interesting to see how the parameters impacts the results, 
+and trying to extract a general interpretation from a full set of data. 
+This second part was really relevant, and shows me even more the importance of  
+machine learning to solve problems completely impossible to solve by hand. 
+The frequency based Tabu duration was especially efficient and impressive. Robin Lambert
+
+\paragraph{}
+During this project, I learned a way to find multi parameters maximum. It was something
+I had already done with multi parameters functions but we were able to find maximum
+or minimum just with mathematics as all the solutions were following the definition of the function.
+This time there was no function to define this multi dimensional space so we had to travel
+through different solutions and finding the best way to do it.
+On another side, because there were very long executions of the program to repeat, I learned
+to write bash scripts to do this job. Trying to understand a code I didn't write was interesting as well.
+Maxime Leras 
 \end{document}
