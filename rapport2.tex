@@ -361,14 +361,18 @@ Regarding S1 and S2, the probability to pick a high random value for the tabu\_d
 The more high tabu\_duration is, the more visited are the neigbors of the solution because it prohibits to reeuse the
 same neighbors in the solution.
 
-So using alpha = 5 raise the probability to find a neighbor more intersting than the best solution. More neighbors
-are explored, 21 526 for the configuration\_9 against 24 004 for the configuration\_8.
+So using alpha = 5 raise the probability to find a neighbor more intersting than the best solution. 
+It increases the size of the duration tabou, and the number of local minima visited is less than when
+alpha = 1.    
 
 The randomness isn’t predictable, we can’t really make assured conclusions.
 Nevertheless, we can observe that using the randomness, the best solution is improved comparing to the configuration
 in the previous part. This is due to the fact that 20 and 80 are not even included in S1 and S2.
 Every random value picked from those two sets will produce a higher tabu duration that 20 or 80.
 So, more neighbors are explored. This is why the best solution is improved.
+Nevertheless, with less local minima visited, alpha = 5 allows to find a better solution because the moves are
+more valuable.
+
 
 \newpage
 \section{Frequency-based tabu duration FTD}
@@ -533,20 +537,19 @@ For both cities sizes, we can see that having a greater alpha gives better resul
 This is due to the fact that the effect of changing the tabu duration depending
 on frequency is much more visible when alpha is big.
 
-When we see the best solution fitness average, we see a little increase in
+Regarding the best solution fitness average, we observe a little increase in
 performances when alpha is greater. But when we look at the fitness one by one,
 optimal solutions are much more present when alpha is 5 than when alpha is equal to 1.
 For example, the optimal solution (5644km) for 50 cities is found 0 times with alpha = 1 but
 5 times with alpha = 5. The same thing can be noticed for the 100 cities problem where
 a solution of 7910km was found with alpha = 5.
 
-In the mean tabu duration for each city matrix, we can see that when alpha increase, the tabu
-duration for cities that where often visited is much higher. This is the only difference thing
+In the mean tabu duration for each city matrix, we can see that when alpha increases, the tabu
+duration for cities that were often visited is much higher. This is the only difference thing
 that changes when alpha changes and it explains the different results.
 
 \subsection{Run the algorithm for the release FTD2}
 
-tab pour les 10 000
 \begin{table}[h]
   \centering
   \small
