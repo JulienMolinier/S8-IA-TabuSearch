@@ -547,6 +547,14 @@ a solution of 7910km was found with alpha = 5.
 In the mean tabu duration for each city matrix, we can see that when alpha increases, the tabu
 duration for cities that were often visited is much higher.
 
+For 50 cities, we can see that the number of iterations before finding the best solution
+doubles when alpha is multiplied by 5. This is because we are increasing the tabu duration
+too fast for the problem size and many city switches are prohibited for too long. 
+
+This problem disapears for the 100 cities problem because alpha = 5 is still adapted for
+this problem size. A greater alpha would probably create the same problem as with 50 cities.
+
+
 \subsection{Run the algorithm for the release FTD2}
 
 \begin{table}[h]
