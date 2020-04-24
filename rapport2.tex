@@ -708,6 +708,7 @@ this problem size. A greater alpha would probably create the same problem as wit
 \end{table}
 
 \newpage
+\subsection{Algorithm performances for FTD2}
 \paragraph{}
 For all configurations, it is intersting to see that with alpha equals to 5, the solution is better when it comes to fitness. We can explain this by saying that the bigger alpha is, the longer
    the tabu duration for a move bewteen two cities is,
@@ -719,7 +720,9 @@ For all configurations, it is intersting to see that with alpha equals to 5, the
    between two cities is different depending on the way you travel...). For the 100 city problem, we’re doing 100 000 iterations,
     so maybe a big enough alpha will quickly banned moves containing a city : we’re exploring more and more, and banning every city nearby
     going slowly to the solution.
-    \paragraph{}
+
+\subsection{Comparing FTD1 and FTD2}
+\paragraph{}
     Comparing to the FTD1, we’re banning moves a longer time for the 100 city problem with alpha equals
     to 5 : we’re setting a tabu duration for a move by taking in consideration the number of times
     we went onto the city we chose first. Thus, we can ban this move a way longer time because there’s 100
@@ -729,32 +732,39 @@ For all configurations, it is intersting to see that with alpha equals to 5, the
     explore another part, quickly being considered Tabu for a long time.
     Globally, increasing the alpha increases the fitness.
 
-\subsection{Personnal learnings}
+\section{Best solution}
 
 \paragraph{}
+The best solution encountered is : 
+
+0-17-61-86-14-62-85-96-66-12-48-20-74-81-84-13-11-3-31-8-25-73-19-77-2-32-9-26-91-16-71-69-37-53-72-49-45-55-18-36-27-92-76-94-58-75-57-88-1-22-34-28-43-99-38-95-54-39-42-24-23-41-6-33-40-21-4-60-10-51-44-15-30-83-87-65-97-93-5-78-52-98-46-56-35-63-90-80-79-29-47-64-89-50-82-67-70-7-68-59 : 7910 km
+
+\section{Personnal learnings}
+
+\paragraph{Julien Molinier}
 During this project I have learned a new way to find the best solution in a large dimension problem with a lot of variables. 
 I had never heard about Tabu algorithm before so it was quite interesting to discover.
 I found really interesting the idea to force an algorithm to explore another way even if it 
-won't improve the best solution immediatly. Julien Molinier
+won't improve the best solution immediatly. 
 
-\paragraph{}
+\paragraph{Fanny Kalinowski}
 I had already heard about the Tabu search algorithm but it was the first time I had to work on its implementation. 
 First of all, it was not that easy to understand it. 
 But this work was necessary to understand the results of all the runs and draw some conclusions. 
 Playing with the parameters, understanding various implementations (RTD, FTD) put the light on the complexity 
 and all the angles this algorithm can be turned. Also, this part reflects how important it is to 
 elaborate a strategy to solve a given problem.
-Fanny Kalinowski
 
-\paragraph{}
+
+\paragraph{Robin Lambert}
 My personal learning from this work is the usage of a very powerful algorithm. 
 It was really interesting to see how the parameters impacts the results, 
 and trying to extract a general interpretation from a full set of data. 
 This second part was really relevant, and shows me even more the importance of  
 machine learning to solve problems completely impossible to solve by hand. 
-The frequency based Tabu duration was especially efficient and impressive. Robin Lambert
+The frequency based Tabu duration was especially efficient and impressive. 
 
-\paragraph{}
+\paragraph{Maxime Leras}
 During this project, I learned a way to find multi parameters maximum. It was something
 I had already done with multi parameters functions but we were able to find maximum
 or minimum just with mathematics as all the solutions were following the definition of the function.
@@ -762,5 +772,5 @@ This time there was no function to define this multi dimensional space so we had
 through different solutions and finding the best way to do it.
 On another side, because there were very long executions of the program to repeat, I learned
 to write bash scripts to do this job. Trying to understand a code I didn't write was interesting as well.
-Maxime Leras 
+
 \end{document}
