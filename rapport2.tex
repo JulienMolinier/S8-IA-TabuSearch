@@ -178,16 +178,14 @@ Duration\_tabou: 80
   lowest with a Tabu duration of 20, which means that the solution was found quicker 
   than with 80, again for both cities samples. 
   \paragraph{}What is quite interesting is that the best solution 
-  was found around the same iteration with a Tabu duration of 20 for both samples for each run (652,6 against 363,7). 
+  was found around the same iteration with a Tabu duration of 20 for both samples for each run (652,6 against 487,6). 
   It is even a little bit faster for the 100 cities problem, but it's about the same rough size, in comparison of the 10 000 and 100 000 iterations respectively
    taken to run the algorithm.
-  The maximum iteration was 1756, and strangely for the 50 cities problem. In both cases it appears that we 
-  never need respectively 10 000 and 100 000 iterations to find the best solution.
 \paragraph{}The number of local minimum visited are really important for the 100 000 iterations runs, 
 of course. As expected, more local minimum were visited with a tabu duration of 80 for
 the 100 cities problem, than with the tabu duration of 20.
 \paragraph{}What we can say so far is that the 100 cities problem is a really complex one, and the best 
-solution found was found only one time (4813 km). Let’s see if the random-based tabu duration
+solution found was found only one time (8005 km). Let’s see if the random-based tabu duration
  increase the results when it comes to fitness, but also performance-wise.
 
 \section{Random based tabu duration RTD}
