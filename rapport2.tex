@@ -595,7 +595,7 @@ tab pour les 10 000
     \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{3771} & \multicolumn{1}{l|}{2316}  \\ \hline
     \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{5644}  & \multicolumn{1}{l|}{2702} & \multicolumn{1}{l|}{2320}  \\ \hline
   \end{tabular}
-  \caption{Results with FTD2, alpha = 5, 10 000 iterations\_ and 100 cities}
+  \caption{Results with FTD2, alpha = 5, 10 000 iterations\_ and 50 cities}
 \end{table}
 
 
@@ -627,7 +627,7 @@ tab pour les 10 000
     \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{8410}  & \multicolumn{1}{l|}{29825} & \multicolumn{1}{l|}{23301}  \\ \hline
     \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{8358}  & \multicolumn{1}{l|}{63426} & \multicolumn{1}{l|}{18636}  \\ \hline
   \end{tabular}
-  \caption{Results with FTD2, alpha = 1, 100 000 iterations\_ and 50 cities}
+  \caption{Results with FTD2, alpha = 1, 100 000 iterations\_ and 100 cities}
 \end{table}
 
 \begin{equation}
@@ -645,5 +645,41 @@ tab pour les 10 000
   \end{smallmatrix}
 \end{equation}
 
+\begin{table}[h]
+  \centering
+  \small
+  \begin{tabular}{llll}
+    \hline
+    \multicolumn{1}{|l|}{\textbf{Run}}& \multicolumn{1}{l|}{\textbf{Best solution fitness}}& \multicolumn{1}{l|}{\textbf{Iteration of the best solution}}& \multicolumn{1}{l|}{\textbf{Nb\_Local\_minima}}\\ \hline
+    \multicolumn{1}{|l|}{1} & \multicolumn{1}{l|}{8054}  & \multicolumn{1}{l|}{53160} & \multicolumn{1}{l|}{21517}  \\ \hline
+    \multicolumn{1}{|l|}{2} & \multicolumn{1}{l|}{7949}  & \multicolumn{1}{l|}{98104} & \multicolumn{1}{l|}{20949}  \\ \hline
+    \multicolumn{1}{|l|}{3} & \multicolumn{1}{l|}{7911}  & \multicolumn{1}{l|}{84982}  & \multicolumn{1}{l|}{20983}  \\ \hline
+    \multicolumn{1}{|l|}{4} & \multicolumn{1}{l|}{7956}  & \multicolumn{1}{l|}{99565}  & \multicolumn{1}{l|}{21208}  \\ \hline
+    \multicolumn{1}{|l|}{5} & \multicolumn{1}{l|}{8256}  & \multicolumn{1}{l|}{58593}  & \multicolumn{1}{l|}{19764}  \\ \hline
+    \multicolumn{1}{|l|}{6} & \multicolumn{1}{l|}{7955}  & \multicolumn{1}{l|}{94970}  & \multicolumn{1}{l|}{19999}  \\ \hline
+    \multicolumn{1}{|l|}{7} & \multicolumn{1}{l|}{7959}  & \multicolumn{1}{l|}{95487}  & \multicolumn{1}{l|}{18694}  \\ \hline
+    \multicolumn{1}{|l|}{8} & \multicolumn{1}{l|}{8183}  & \multicolumn{1}{l|}{13473} & \multicolumn{1}{l|}{19997}  \\ \hline
+    \multicolumn{1}{|l|}{9} & \multicolumn{1}{l|}{7948}  & \multicolumn{1}{l|}{79910} & \multicolumn{1}{l|}{19707}  \\ \hline
+    \multicolumn{1}{|l|}{10} & \multicolumn{1}{l|}{8189}  & \multicolumn{1}{l|}{88352} & \multicolumn{1}{l|}{19564}  \\ \hline
+  \end{tabular}
+  \caption{Results with FTD2, alpha = 5, 100 000 iterations\_ and 100 cities}
+\end{table}
+
+
+
+\begin{equation}
+  \tag{Mean Tabu Duration for each city (alpha = 5 and 100 cities)}
+  \begin{smallmatrix} 68.1509 & 112.007 & 101.918 & 98.6314 & 105.809  & 96.8933 & 100.215 & 119.445 & 102.729 & 94.9213 \\
+    83.724 & 92.953 & 99.9827 & 102.834 & 107.271 & 107.257 & 107.438 & 86.8929 & 79.7498 & 72.0014 \\ 
+    66.5573 & 66.7006 & 64.6535 & 68.838 & 48.5701 & 38.8745 & 40.5317 & 31.665 & 44.4055 & 103.265 \\
+    94.904 & 89.928 & 96.1262 & 71.4068 & 87.5286 & 89.8988 & 89.9572 & 95.5804 & 99.7745 & 62.5995 \\
+    32.7234 & 60.2167 & 61.1399 & 61.2695 & 63.1004 & 40.3795 & 32.8901 & 30.3592 & 34.6225 & 46.0168 \\
+    49.5236 & 51.6692 & 50.1898 & 34.7083 & 26.3168 & 21.9012 & 24.4254 & 27.8591 & 31.8502 & 31.199 \\
+    28.2871 & 30.2453 & 33.5564 & 37.9226 & 38.6231 & 39.0285 & 40.2019 & 41.1092 & 44.898 & 41.8697 \\
+    43.2374 & 43.1569 & 34.0033 & 27.1339 & 23.6916 & 23.4921 & 31.9303 & 37.0714 & 43.0826 & 58.7028 \\
+    85.291 & 86.2254 & 84.4447 & 86.1797 & 75.2931 & 74.6028 & 60.3596 & 54.8754 & 54.2978 & 49.8056 \\
+    52.1828 & 48.3708 & 45.3021 & 60.7538 & 62.2397 & 63.7988 & 67.8385 & 72.2626 & 89.3126 & 82.0704 \\
+  \end{smallmatrix}
+\end{equation}
 
 \end{document}
